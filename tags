@@ -1,0 +1,481 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALL_NEG	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	e	enum:__anon5
+ALL_POS	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	e	enum:__anon5
+ALL_POS_CONCAVE	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	e	enum:__anon5
+ANGLE_OBJECT_LIST	glGaussMap.c	31;"	d	file:
+ARCS_MAP_LIST	glGaussMap.c	39;"	d	file:
+AXES_LIST	glGaussMap.c	26;"	d	file:
+AppTitle	glDisplay.c	/^char *AppTitle = "Gauss Map Viewer";$/;"	v
+Begin	gaussMap.c	/^int				Begin;$/;"	v
+CCW	geometry.h	/^typedef enum {CW, CCW, COL}							spinType;$/;"	e	enum:__anon1
+COL	geometry.h	/^typedef enum {CW, CCW, COL}							spinType;$/;"	e	enum:__anon1
+COLLINEAR	geometry.h	/^typedef enum {CONCAVE, CONVEX, COLLINEAR}			angleType;$/;"	e	enum:__anon2
+CONCAVE	geometry.h	/^typedef enum {CONCAVE, CONVEX, COLLINEAR}			angleType;$/;"	e	enum:__anon2
+CONVEX	geometry.h	/^typedef enum {CONCAVE, CONVEX, COLLINEAR}			angleType;$/;"	e	enum:__anon2
+CURVATURE	decimator.c	5;"	d	file:
+CW	geometry.h	/^typedef enum {CW, CCW, COL}							spinType;$/;"	e	enum:__anon1
+C_H_LIST	glGaussMap.c	35;"	d	file:
+C_H_NormalArray	gaussMap.c	/^vertexPtr		C_H_NormalArray = NULL;$/;"	v
+C_H_WIRE_LIST	glGaussMap.c	36;"	d	file:
+ConvexHull	gaussMap.c	/^nodePtr			ConvexHull = NULL;$/;"	v
+Curvature_sorted_array	decimator.c	/^decimationDataPtr	Curvature_sorted_array = NULL;$/;"	v
+DOUBLE	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+EPSILON	geometry.h	5;"	d
+EXTENDED_STAR_LIST	glGaussMap.c	38;"	d	file:
+End	gaussMap.c	/^int				End;$/;"	v
+FALSE	tools.h	/^typedef enum {FALSE, TRUE}	boolean;$/;"	e	enum:__anon4
+FIXED_LISTS	glGaussMap.c	43;"	d	file:
+FLAT	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	e	enum:__anon5
+File_Name	decimator.c	/^char*				File_Name = NULL;$/;"	v
+GAUSS_MAP_NEG_LIST	glGaussMap.c	41;"	d	file:
+GAUSS_MAP_POS_LIST	glGaussMap.c	40;"	d	file:
+GaussianCurvature	gaussMap.c	/^double			GaussianCurvature = 0.0;$/;"	v
+INTER	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+IntersectionPairs	sphericalGeometry.c	/^nodePtr				IntersectionPairs = NULL;$/;"	v
+IntersectionPairsCopy	sphericalGeometry.c	/^nodePtr				IntersectionPairsCopy = NULL;$/;"	v
+LISTS_PER_VERTEX	glGaussMap.c	44;"	d	file:
+MATCH_1	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+MATCH_2	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+MAX_TAC	gaussMap.c	/^double			MAX_TAC = 0.0;$/;"	v
+MIXED	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	e	enum:__anon5
+MIXED_CONCAVE	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	e	enum:__anon5
+M_PI	glDisplay.c	27;"	d	file:
+Max_Size	glGaussMap.c	/^double      	Max_Size = 2.0;$/;"	v
+Max_Size	glGaussMap.c	/^double      	Max_Size = 3.0;$/;"	v
+Max_parameter	decimator.c	/^double				Max_parameter = 0.0;$/;"	v
+NEW	decimator.c	796;"	d	file:
+NORMAL	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+NegativeGaussMapArea	gaussMap.c	/^double			NegativeGaussMapArea = 0.0;$/;"	v
+NegativeGaussian	gaussMap.c	/^double			NegativeGaussian = 0.0;$/;"	v
+OBJECT_LIST	glGaussMap.c	30;"	d	file:
+OBJECT_NORMALS_LIST	glGaussMap.c	33;"	d	file:
+ObjectData	gaussMap.c	/^objectStruct	ObjectData;$/;"	v
+PI	geometry.h	4;"	d
+POINT_LIST	glGaussMap.c	28;"	d	file:
+PolygonTriangles	gaussMap.c	/^nodePtr			PolygonTriangles = NULL;$/;"	v
+PositiveGaussMapArea	gaussMap.c	/^double			PositiveGaussMapArea = 0.0;$/;"	v
+PositiveGaussian	gaussMap.c	/^double			PositiveGaussian = 0.0;$/;"	v
+Removal_count	decimator.c	/^int					Removal_count = 0;$/;"	v
+Removal_index	decimator.c	/^int					Removal_index = 1;$/;"	v
+Roughness	gaussMap.c	/^double			Roughness = 0.0;$/;"	v
+SHORT_PI	geometry.h	3;"	d
+SMALL_EPSILON	glObjectLists.c	/^static float    SMALL_EPSILON = 1E-6;$/;"	v	file:
+SPHERE_LIST	glGaussMap.c	27;"	d	file:
+SPLIT	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+STAR_LIST	glGaussMap.c	34;"	d	file:
+SaveScreenShot	glScreenCapture.c	/^void SaveScreenShot(unsigned int serial, int width, int height)$/;"	f
+ShowArcs	glGaussMap.c	/^boolean			ShowArcs = FALSE;$/;"	v
+ShowBack	glGaussMap.c	/^boolean			ShowBack = FALSE;$/;"	v
+ShowConvexHull	glGaussMap.c	/^boolean			ShowConvexHull = FALSE;$/;"	v
+ShowConvexHullWire	glGaussMap.c	/^boolean			ShowConvexHullWire = FALSE;$/;"	v
+ShowExtendedNormals	glGaussMap.c	/^boolean			ShowExtendedNormals = FALSE;$/;"	v
+ShowNegative	glGaussMap.c	/^boolean			ShowNegative = TRUE;$/;"	v
+ShowNormalNames	glGaussMap.c	/^int				ShowNormalNames = FALSE;$/;"	v
+ShowNormals	glGaussMap.c	/^boolean			ShowNormals = FALSE;$/;"	v
+ShowObject	glGaussMap.c	/^boolean			ShowObject = TRUE;$/;"	v
+ShowPositive	glGaussMap.c	/^boolean			ShowPositive = TRUE;$/;"	v
+ShowSphere	glGaussMap.c	/^boolean			ShowSphere = TRUE;$/;"	v
+ShowVertex	gaussMap.c	/^int				ShowVertex = 0;$/;"	v
+ShowVertexNormal	glGaussMap.c	/^boolean			ShowVertexNormal = FALSE;$/;"	v
+Sorted_vertex_index_array	decimator.c	/^int*				Sorted_vertex_index_array = NULL;$/;"	v
+Sphere_Radius	glGaussMap.c	/^double			Sphere_Radius = 2.0f;$/;"	v
+TAC_OBJECT_LIST	glGaussMap.c	32;"	d	file:
+TRUE	tools.h	/^typedef enum {FALSE, TRUE}	boolean;$/;"	e	enum:__anon4
+TotalGaussMapArea	gaussMap.c	/^double			TotalGaussMapArea = 0.0;$/;"	v
+VISITED	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	e	enum:__anon3
+VertexAngleArray	gaussMap.c	/^double*			VertexAngleArray = NULL;$/;"	v
+VertexDataArray	gaussMap.c	/^vertexDataStruct*	VertexDataArray = NULL;$/;"	v
+X	tools.h	6;"	d
+Y	tools.h	7;"	d
+Z	tools.h	8;"	d
+activateRotation	glDisplay.c	/^int     activateRotation, activateScaling, activateTranslation;$/;"	v
+activateScaling	glDisplay.c	/^int     activateRotation, activateScaling, activateTranslation;$/;"	v
+activateTranslation	glDisplay.c	/^int     activateRotation, activateScaling, activateTranslation;$/;"	v
+active	glMain.c	/^int	active;$/;"	v
+addFaceToVertexFaceArray	objParser.c	/^nodePtr* addFaceToVertexFaceArray (nodePtr* vertexFaceArray, facePtr face, int numVertices, int* facesPerVertex)$/;"	f
+addFrontNode	lists.c	/^nodePtr addFrontNode (nodePtr list, void* newData)$/;"	f
+addNode	lists.c	/^nodePtr addNode (nodePtr list, void* newData)$/;"	f
+add_edge	edges.c	/^void add_edge (int vertex1, int vertex2, int opposite_vertex, int face_id, int* num_edges, nodePtr* edge_list)$/;"	f
+add_vertex_face	decimator.c	/^void add_vertex_face (int vertex_index, int new_face_id)$/;"	f
+add_vertex_to_convex_hull	convexHull3D.c	/^int add_vertex_to_convex_hull (int vertex_index, vertexPtr vertexArray, nodePtr *convexHull)$/;"	f
+advanceList	lists.c	/^nodePtr advanceList (nodePtr pointer, char* functionName)$/;"	f
+angleBetweenVectors	geometry.c	/^double angleBetweenVectors (vectorPtr vector1, vectorPtr vector2)$/;"	f
+angleBetweenVertices	geometry.c	/^double angleBetweenVertices (vertexStruct vertex1, vertexStruct vertex2, vertexStruct vertex3)$/;"	f
+angleType	geometry.h	/^typedef enum {CONCAVE, CONVEX, COLLINEAR}			angleType;$/;"	t	typeref:enum:__anon2
+angle_deficit	vertexGeometry.h	/^	double			angle_deficit;$/;"	m	struct:vertexDataStruct
+arcIntersection	sphericalGeometry.c	/^vectorPtr arcIntersection (vectorPtr arc1vector1, vectorPtr arc1vector2, vectorPtr arc2vector1, vectorPtr arc2vector2, boolean* intersect, int* endpoint)$/;"	f
+area3D_Polygon	geometry.c	/^double area3D_Polygon( int num_vertices, vertexPtr vertex_array, vertexStruct normal_vector )$/;"	f
+area3D_cone	faces.c	/^double area3D_cone (nodePtr triangle_list, vertexPtr vertex_array, facePtr face_array)$/;"	f
+area3D_face	faces.c	/^double area3D_face (faceStruct face, vertexPtr vertex_array)$/;"	f
+artificial_normal	vertexGeometry.h	/^	vectorStruct	artificial_normal;$/;"	m	struct:vertexDataStruct
+blob	glDisplay.c	/^    unsigned char blob[16];$/;"	m	struct:htime	file:
+boolean	tools.h	/^typedef enum {FALSE, TRUE}	boolean;$/;"	t	typeref:enum:__anon4
+border_vertex	vertexGeometry.h	/^	boolean			border_vertex;$/;"	m	struct:vertexDataStruct
+buildFont	glDisplay.c	/^GLvoid buildFont(GLvoid)$/;"	f
+check_existing_faces	decimator.c	/^boolean check_existing_faces (int test_vertex, edgePtr edge)$/;"	f
+check_opposite_vectors	sphericalGeometry.c	/^void check_opposite_vectors (nodePtr normalList, facePtr faceArray, vertexPtr vertexArray, int* numNormals)$/;"	f
+classify_vertex	gaussMap.c	/^void classify_vertex (vertexDataStruct* current_vertex_data, int numPolygons, int positive_polys, int flat_polys, int negative_polys)$/;"	f
+colinearVectors	geometry.c	/^boolean colinearVectors (vectorPtr vector1, vectorPtr vector2)$/;"	f
+colourPalette	glGaussMap.c	/^int				colourPalette = 0;$/;"	v
+compute_3D_Convex_Hull	convexHull3D.c	/^nodePtr compute_3D_Convex_Hull (vertexPtr vertexArray, int numVertices)$/;"	f
+compute_initial_hull	convexHull3D.c	/^nodePtr compute_initial_hull (vertexPtr vertexArray, int numVertices, vertexPtr realVertexArray)$/;"	f
+compute_vertex_normal	decimator.c	/^void compute_vertex_normal (int update_vertex_id)$/;"	f
+copyList	lists.c	/^nodePtr copyList (nodePtr list, size_t dataSize)$/;"	f
+copyNode	lists.c	/^void* copyNode (void* node, size_t dataSize)$/;"	f
+copyVertex	vertices.c	/^void copyVertex (vertexPtr source, vertexPtr destination)$/;"	f
+createEmptyFace	faces.c	/^facePtr	createEmptyFace (void)$/;"	f
+createIntPointer	vertices.c	/^int* createIntPointer (int data)$/;"	f
+createSegment	geometry.c	/^segmentPtr createSegment (int vertex1, int vertex2, int info)$/;"	f
+createVertex	vertices.c	/^vertexPtr createVertex (int id, double newX, double newY, double newZ)$/;"	f
+crossProduct	geometry.c	/^vectorPtr crossProduct (vectorPtr vector1, vectorPtr vector2)$/;"	f
+ctx	glMain.c	/^GLXContext	ctx;$/;"	v
+curvature	vertexGeometry.h	/^	double			curvature;$/;"	m	struct:vertexDataStruct
+data	lists.h	/^	void*	 	data;$/;"	m	struct:node
+decimated_face_list	glGaussMap.c	/^nodePtr			decimated_face_list = NULL;$/;"	v
+decimated_vertex_list	glGaussMap.c	/^nodePtr			decimated_vertex_list = NULL;$/;"	v
+decimationDataPtr	decimator.c	/^typedef decimationDataStruct* decimationDataPtr;$/;"	t	file:
+decimationDataStruct	decimator.c	/^typedef struct decimationDataStruct$/;"	s	file:
+decimationDataStruct	decimator.c	/^} decimationDataStruct;$/;"	t	typeref:struct:decimationDataStruct	file:
+decimation_parameter	decimator.c	/^	double	decimation_parameter;$/;"	m	struct:decimationDataStruct	file:
+deleteFont	glDisplay.c	/^GLvoid deleteFont(GLvoid)$/;"	f
+discard_redundant_pairs	sphericalGeometry.c	/^void discard_redundant_pairs (int* remainingPairs, nodePtr normalList, int listLength)$/;"	f
+displayAxes	glDisplay.c	/^GLuint	displayLight, displayTextures, mode, displayAxes, shade, displayNormals;$/;"	v
+displayLight	glDisplay.c	/^GLuint	displayLight, displayTextures, mode, displayAxes, shade, displayNormals;$/;"	v
+displayNormals	glDisplay.c	/^GLuint	displayLight, displayTextures, mode, displayAxes, shade, displayNormals;$/;"	v
+displayTextures	glDisplay.c	/^GLuint	displayLight, displayTextures, mode, displayAxes, shade, displayNormals;$/;"	v
+displayVertexArray	object3D.h	/^	vertexPtr	displayVertexArray;$/;"	m	struct:objectStruct
+distance2Vertices	geometry.c	/^double distance2Vertices (vertexStruct vertex1, vertexStruct vertex2)$/;"	f
+distanceVertexToSegment	geometry.c	/^double distanceVertexToSegment (vertexStruct vertex, vertexStruct segmentVertex1, vertexStruct segmentVertex2)$/;"	f
+divideFlatPolygon	geometry.c	/^void divideFlatPolygon (vertexPtr vertexArray, nodePtr polygonList, nodePtr* part1List, nodePtr* part2List, vectorStruct plane_normal)$/;"	f
+divideSphericalPolygon	sphericalGeometry.c	/^void divideSphericalPolygon (nodePtr polygonList, nodePtr* part1List, nodePtr* part2List, spinType polygonOrientation)$/;"	f
+dotProduct	geometry.c	/^double dotProduct (vectorPtr vector1, vectorPtr vector2)$/;"	f
+double_check_intersection	sphericalGeometry.c	/^boolean double_check_intersection (vectorPtr vector1_1, vectorPtr vector1, vectorPtr vector2, vectorPtr vector3_1, vectorPtr vector3, vectorPtr vector4) $/;"	f
+dpy	glMain.c	/^Display		*dpy;$/;"	v
+edgeId	edges.h	/^	int			edgeId;$/;"	m	struct:edgeStruct
+edgeList	object3D.h	/^	nodePtr		edgeList;$/;"	m	struct:objectStruct
+edgePtr	edges.h	/^typedef edgeStruct* edgePtr;$/;"	t
+edgeStruct	edges.h	/^typedef struct edgeStruct$/;"	s
+edgeStruct	edges.h	/^} edgeStruct;$/;"	t	typeref:struct:edgeStruct
+equalVectors	geometry.c	/^boolean equalVectors (vectorPtr vector1, vectorPtr vector2)$/;"	f
+equalVertices	geometry.c	/^boolean equalVertices (vertexStruct vertex1, vertexStruct vertex2)$/;"	f
+equal_faces	faces.c	/^boolean equal_faces (faceStruct face_1, faceStruct face_2)$/;"	f
+execute_edge_flip	decimator.c	/^void execute_edge_flip (edgePtr edge, facePtr face_1, facePtr face_2, boolean inverted)$/;"	f
+existingEdge	edges.c	/^int existingEdge (nodePtr edgeList, edgePtr edge, int listLength)$/;"	f
+extra	vertices.h	/^	int     extra;$/;"	m	struct:vertexStruct
+face1	edges.h	/^	int			face1;$/;"	m	struct:edgeStruct
+face2	edges.h	/^	int			face2;$/;"	m	struct:edgeStruct
+faceArray	object3D.h	/^	facePtr		faceArray;$/;"	m	struct:objectStruct
+faceId	faces.h	/^	int			faceId;$/;"	m	struct:faceStruct
+faceNormal	faces.h	/^	vectorPtr	faceNormal;$/;"	m	struct:faceStruct
+facePtr	faces.h	/^typedef faceStruct* facePtr;$/;"	t
+faceStruct	faces.h	/^typedef struct faceStruct$/;"	s
+faceStruct	faces.h	/^} faceStruct;$/;"	t	typeref:struct:faceStruct
+faceVertices	faces.h	/^	int			faceVertices;$/;"	m	struct:faceStruct
+facesPerVertex	object3D.h	/^	int*		facesPerVertex;$/;"	m	struct:objectStruct
+feature_edge_list	vertexGeometry.h	/^	nodePtr			feature_edge_list;$/;"	m	struct:vertexDataStruct
+findArcIntersections	sphericalGeometry.c	/^nodePtr findArcIntersections (nodePtr normalList, boolean* arcsIntersect)$/;"	f
+findFacesIntersection	gaussMap.c	/^void findFacesIntersection (int faceIndex1, int faceIndex2)$/;"	f
+findFarCollinearVertex	geometry.c	/^int findFarCollinearVertex (vertexStruct vertex1, vertexStruct vertex2, vertexStruct vertex3)$/;"	f
+findLoopNormals	sphericalGeometry.c	/^nodePtr findLoopNormals (nodePtr normalList, int numNormals, int* numBasicPolygons)$/;"	f
+findSphereTangent	sphericalGeometry.c	/^vectorPtr findSphereTangent (vectorPtr mainVector, vectorPtr referenceVector)$/;"	f
+findSphericalAngle	sphericalGeometry.c	/^double findSphericalAngle (vectorPtr vector1, vectorPtr vector2, vectorPtr vector3, spinType polygonOrientation, angleType* angleOrientation)$/;"	f
+findSphericalPolygonArea	sphericalGeometry.c	/^double findSphericalPolygonArea (nodePtr normalList, spinType* orientation, boolean c_h_vertex, vertexPtr coneVertexArray, int coneVertexArrayLength)$/;"	f
+find_closest_vertex	decimator.c	/^int find_closest_vertex (int removed_vertex_id, vertexDataStruct current_vertex_data)$/;"	f
+find_concave_vertices	gaussMap.c	/^void find_concave_vertices (vertexDataStruct* current_vertex_data, int vertex_index)$/;"	f
+find_edge_in_triangle	edges.c	/^boolean find_edge_in_triangle (edgePtr edge, faceStruct face)$/;"	f
+find_short_path	pathFinder.c	/^nodePtr find_short_path (objectStruct ObjectData, vertexDataPtr VertexDataArray, int start_index, int end_index)$/;"	f
+find_spherical_polygon_orientation	sphericalGeometry.c	/^angleType find_spherical_polygon_orientation (nodePtr polygon_list, int* concave_angle_total)$/;"	f
+find_vertex_in_object	faces.c	/^boolean find_vertex_in_object (int vertex_index, nodePtr triangle_list, vertexPtr vertexArray)$/;"	f
+flip_edge	edges.c	/^void flip_edge (edgePtr edge, facePtr face_1, facePtr face_2, boolean inverted)$/;"	f
+fogColor	glDisplay.c	/^GLfloat fogColor[] = { 0.5f, 0.5f, 0.5f, 1.0f };    \/* fog color *\/$/;"	v
+fogFilter	glDisplay.c	/^GLuint fogFilter = 0;   \/* which fog to use *\/$/;"	v
+fogMode	glDisplay.c	/^GLuint fogMode[] = { GL_EXP, GL_EXP2, GL_LINEAR };  \/* three types of fog *\/$/;"	v
+font	glDisplay.c	/^GLuint	font;$/;"	v
+fps	glDisplay.c	/^GLfloat	fps;$/;"	v
+frames	glDisplay.c	/^int	frames;$/;"	v
+freeList	lists.c	/^void freeList (nodePtr list)$/;"	f
+freeListArray	lists.c	/^void freeListArray (nodePtr* listArray, int numLists)$/;"	f
+freeListOfLists	lists.c	/^void freeListOfLists (nodePtr mainList)$/;"	f
+freeObjectMemory	gaussMap.c	/^void freeObjectMemory ()$/;"	f
+freeVertexDataStructure	vertexGeometry.c	/^void freeVertexDataStructure (vertexDataStruct* vertex_data)$/;"	f
+free_pairs_list	sphericalGeometry.c	/^void free_pairs_list (void)$/;"	f
+generateGaussMap	gaussMap.c	/^void generateGaussMap ()$/;"	f
+generateObject	gaussMap.c	/^void generateObject (char* inputFile)$/;"	f
+getAngleAroundVertex	gaussMap.c	/^double getAngleAroundVertex (nodePtr faceIndexList, facePtr faceArray, vertexPtr vertexArray, int vertexIndex, boolean *border)$/;"	f
+getArtificialNormal	gaussMap.c	/^vectorStruct getArtificialNormal (nodePtr face_list, facePtr face_array, vertexPtr vertex_array)$/;"	f
+getConeVertices	gaussMap.c	/^vertexPtr getConeVertices (nodePtr faceList, facePtr faceArray, vertexPtr vertexArray, vertexDataPtr current_vertex_data)$/;"	f
+getFaceNormalList	sphericalGeometry.c	/^nodePtr getFaceNormalList (nodePtr faceList, facePtr faceArray, int* numNormals, int vertex_index, nodePtr* feature_edge_list)$/;"	f
+getListLength	lists.c	/^int getListLength (nodePtr list)$/;"	f
+getListTail	lists.c	/^nodePtr getListTail (nodePtr list)$/;"	f
+getMax	geometry.c	/^double getMax (double first, double second)$/;"	f
+getMin	geometry.c	/^double getMin (double first, double second)$/;"	f
+getNodeData	lists.c	/^void* getNodeData (nodePtr list, int itemPosition)$/;"	f
+getTriangleNormal	normals3D.c	/^vectorPtr getTriangleNormal (vertexStruct vertex1, vertexStruct vertex2, vertexStruct vertex3)$/;"	f
+get_angle_deficit_type	glObjectLists.c	/^int get_angle_deficit_type(double angle_deficit)$/;"	f
+get_average_normal	gaussMap.c	/^vectorStruct get_average_normal (vertexStruct vertex_normal)$/;"	f
+get_decimated_object	decimator.c	/^objectStruct get_decimated_object (objectStruct complex_object)$/;"	f
+get_edge_curvature	decimator.c	/^double get_edge_curvature (edgePtr edge, faceStruct face_1, faceStruct face_2)$/;"	f
+get_edge_list	edges.c	/^nodePtr get_edge_list (nodePtr triangle_list, int num_triangles)$/;"	f
+get_file_name	decimator.c	/^void get_file_name (char* input_file)$/;"	f
+get_flat_distance	pathFinder.c	/^double get_flat_distance (vertexStruct vertex1, vertexStruct vertex2)$/;"	f
+get_link_curvature	decimator.c	/^double get_link_curvature (int vertexId, vertexDataStruct current_vertex_data)$/;"	f
+get_link_length	faces.c	/^double get_link_length (nodePtr triangle_list, vertexPtr vertex_array, facePtr face_array, int vertex_index)$/;"	f
+get_path_curvature	pathFinder.c	/^double get_path_curvature (nodePtr path_list, vertexPtr vertexArray)$/;"	f
+get_path_horizontal_variation	pathFinder.c	/^double get_path_horizontal_variation (nodePtr path_list, vertexPtr vertexArray)$/;"	f
+get_path_length	pathFinder.c	/^double get_path_length (nodePtr path_list, vertexPtr vertexArray)$/;"	f
+get_vertex_decimation_parameter	decimator.c	/^double get_vertex_decimation_parameter (int vertex_index)$/;"	f
+get_vertex_with_minimum_curvature	decimator.c	/^int get_vertex_with_minimum_curvature (void)$/;"	f
+glMain	glMain.c	/^int glMain ( void )$/;"	f
+gl_arcs_map	glGaussMap.c	/^void gl_arcs_map (GLuint list, nodePtr normalList)$/;"	f
+gl_billboard_end	glTools.c	/^void gl_billboard_end ()$/;"	f
+gl_billboard_init	glTools.c	/^void gl_billboard_init ()$/;"	f
+gl_cleanup	glGaussMap.c	/^void gl_cleanup ()$/;"	f
+gl_convex_hull_to_display_list	glConvexHull.c	/^void gl_convex_hull_to_display_list (GLuint list, nodePtr convexHull, objectStruct objectData)$/;"	f
+gl_convex_hull_wireframe_to_display_list	glConvexHull.c	/^void gl_convex_hull_wireframe_to_display_list (GLuint list, nodePtr convexHull, objectStruct objectData)$/;"	f
+gl_create_display_lists	glGaussMap.c	/^void gl_create_display_lists ()$/;"	f
+gl_data	glDisplay.c	/^int gl_data( void )$/;"	f
+gl_draw	glDisplay.c	/^void gl_draw( )$/;"	f
+gl_draw_artificial_normal	glGaussMap.c	/^void gl_draw_artificial_normal (vertexStruct currentVertex)$/;"	f
+gl_draw_face_names	glGaussMap.c	/^void gl_draw_face_names (int current_vertex, objectStruct objectData)$/;"	f
+gl_draw_normal_names	glGaussMap.c	/^void gl_draw_normal_names (nodePtr normalList)$/;"	f
+gl_draw_path	glGaussMap.c	/^void gl_draw_path (nodePtr path_list, objectStruct objectData)$/;"	f
+gl_draw_projection_plane	glGaussMap.c	/^void gl_draw_projection_plane ()$/;"	f
+gl_draw_scene_1	glGaussMap.c	/^void gl_draw_scene_1 ()$/;"	f
+gl_draw_scene_2	glGaussMap.c	/^void gl_draw_scene_2 ()$/;"	f
+gl_draw_text	glGaussMap.c	/^void gl_draw_text (char* string)$/;"	f
+gl_draw_vertex_star	glGaussMap.c	/^void gl_draw_vertex_star (int vertexIndex)$/;"	f
+gl_event	glDisplay.c	/^void gl_event( int event, int data, int xpos, int ypos )$/;"	f
+gl_extended_normal_star_to_display_list	glGaussMap.c	/^void gl_extended_normal_star_to_display_list (GLuint list, nodePtr normalList)$/;"	f
+gl_faces_to_display_list	glObjectLists.c	/^void gl_faces_to_display_list (GLuint list, objectStruct objectData, int colourType)$/;"	f
+gl_init	glDisplay.c	/^int gl_init( void )$/;"	f
+gl_init_fog	glDisplay.c	/^void gl_init_fog ()$/;"	f
+gl_init_light	glDisplay.c	/^void gl_init_light ()$/;"	f
+gl_no_lighting	glTools.c	/^void gl_no_lighting (GLboolean* light_status)$/;"	f
+gl_normal_star_to_display_list	glGaussMap.c	/^void gl_normal_star_to_display_list (GLuint list, objectStruct objectData)$/;"	f
+gl_normals_to_display_list	glObjectLists.c	/^void gl_normals_to_display_list (GLuint list, objectStruct objectData)$/;"	f
+gl_oriented_arcs_map	glGaussMap.c	/^void gl_oriented_arcs_map (GLuint list, nodePtr polygonList, spinType* orientations)$/;"	f
+gl_oriented_gauss_map	glGaussMap.c	/^void gl_oriented_gauss_map (GLuint list, nodePtr polygonList, spinType* orientations, boolean convex, spinType direction)$/;"	f
+gl_point_list	glGaussMap.c	/^void gl_point_list (GLuint list)$/;"	f
+gl_prepare_scene	glGaussMap.c	/^void gl_prepare_scene ()$/;"	f
+gl_printf	glDisplay.c	/^void gl_printf( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha,$/;"	f
+gl_quadric_sphere	glGaussMap.c	/^void gl_quadric_sphere (GLuint list)$/;"	f
+gl_remove_lists	glGaussMap.c	/^void gl_remove_lists (int removed_vertex_id)$/;"	f
+gl_resize	glDisplay.c	/^void gl_resize( void )$/;"	f
+gl_restore_lighting	glTools.c	/^void gl_restore_lighting (GLboolean light_status)$/;"	f
+gl_rotate_scene	glDisplay.c	/^void gl_rotate_scene ()$/;"	f
+gl_scale_scene	glDisplay.c	/^void gl_scale_scene ()$/;"	f
+gl_scene	glDisplay.c	/^void gl_scene( int object )$/;"	f
+gl_scene_event	glGaussMap.c	/^void gl_scene_event( int event, int data, int xpos, int ypos )$/;"	f
+gl_setup_clip_plane	glGaussMap.c	/^void gl_setup_clip_plane (int plane, vectorPtr vertex1, vectorPtr vertex2, GLdouble* plane_equation)$/;"	f
+gl_show_single_normal	glGaussMap.c	/^void gl_show_single_normal (int vertexNumber, objectStruct objectData)$/;"	f
+gl_translate_scene	glDisplay.c	/^void gl_translate_scene ()$/;"	f
+gl_update_lists	glGaussMap.c	/^void gl_update_lists (int removed_vertex_id)$/;"	f
+glx_init	glMain.c	/^int glx_init( int fullscreen )$/;"	f
+height	glDisplay.c	/^int	width, height;$/;"	v
+herisson_swap	gaussMap.c	/^void herisson_swap (objectStruct ObjectData)$/;"	f
+hide_mouse	glMain.c	/^void hide_mouse( void )$/;"	f
+htime	glDisplay.c	/^struct htime$/;"	s	file:
+i	geometry.h	/^	double		i;$/;"	m	struct:vectorStruct
+info	geometry.h	/^	int			info;$/;"	m	struct:segmentStruct
+info	glDisplay.c	/^int	info;$/;"	v
+initRandom	tools.c	/^void initRandom ()$/;"	f
+initializeVertexDataStructure	vertexGeometry.c	/^void initializeVertexDataStructure (vertexDataStruct* vertex_data)$/;"	f
+insertDataAfterIndex	lists.c	/^void insertDataAfterIndex (nodePtr list, void* newData, int index)$/;"	f
+insertListAfterIndex	lists.c	/^void insertListAfterIndex (nodePtr list, nodePtr newList, int index)$/;"	f
+invertList	lists.c	/^nodePtr invertList (nodePtr list, size_t dataSize)$/;"	f
+j	geometry.h	/^	double		j;$/;"	m	struct:vectorStruct
+joinLists	lists.c	/^void joinLists (nodePtr* head, nodePtr tail)$/;"	f
+k	geometry.h	/^	double		k;$/;"	m	struct:vectorStruct
+listIndex	glGaussMap.c	/^GLuint*			listIndex;$/;"	v
+listToFaceArray	faces.c	/^facePtr listToFaceArray (nodePtr list, int listLength)$/;"	f
+listToVertexArray	vertices.c	/^vertexPtr listToVertexArray (nodePtr list, int listLength)$/;"	f
+main	decimator.c	/^int main (int argc, char* argv[])$/;"	f
+main	gaussMap.c	/^int main (int argc, char* argv[])$/;"	f
+mark_convex_hull_vertices	convexHull3D.c	/^void mark_convex_hull_vertices (nodePtr convexHull, vertexPtr vertexArray, int numVertices)$/;"	f
+matchIntersectionPairs	sphericalGeometry.c	/^void matchIntersectionPairs (int vectorId_1, int vectorId_2, int vectorId_3, int vectorId_4, int new_Id)$/;"	f
+matrixMultiplication	matrices.c	/^void matrixMultiplication (double a[][3], double b[][3], double result[][3])$/;"	f
+matrixToLinear	matrices.c	/^void matrixToLinear (double initialMatrix[][3], double finalMatrix[])$/;"	f
+matrixVectorMultiplication	matrices.c	/^vectorPtr matrixVectorMultiplication (double matrix[][3], vectorPtr vector)$/;"	f
+measure_spherical_polygon_perimeter	sphericalGeometry.c	/^double measure_spherical_polygon_perimeter (nodePtr polygon_list)$/;"	f
+minimise_triangulation_curvature	decimator.c	/^void minimise_triangulation_curvature (nodePtr edge_list, int num_edges, int vertexId, vertexDataStruct current_vertex_data, double old_curvature)$/;"	f
+mode	glDisplay.c	/^GLuint	displayLight, displayTextures, mode, displayAxes, shade, displayNormals;$/;"	v
+modeswitch	glMain.c	/^int	modeswitch;$/;"	v
+move_mouse	glMain.c	/^void move_mouse( int x, int y )$/;"	f
+mt	glDisplay.c	/^struct	htime tv, mt;$/;"	v	typeref:struct:
+mx	glDisplay.c	/^GLfloat	mx, my;$/;"	v
+my	glDisplay.c	/^GLfloat	mx, my;$/;"	v
+newEdge	edges.c	/^edgePtr newEdge (int edgeId, int edgeVertex1, int edgeVertex2)$/;"	f
+newFace	faces.c	/^facePtr newFace (int faceId, int numVertices, int v1, int v2, int v3, int v4)$/;"	f
+newTuple	convexHull3D.c	/^int* newTuple (int one, int two)$/;"	f
+next	lists.h	/^	struct node*	next;$/;"	m	struct:node	typeref:struct:node::node
+node	lists.h	/^typedef struct node$/;"	s
+node	lists.h	/^} node;$/;"	t	typeref:struct:node
+nodePtr	lists.h	/^typedef node* nodePtr;$/;"	t
+normalArray	object3D.h	/^	vertexPtr	normalArray;$/;"	m	struct:objectStruct
+normalizeVector	geometry.c	/^void normalizeVector (vectorPtr vector)$/;"	f
+normalizeVertexArray	vertices.c	/^vertexPtr normalizeVertexArray (vertexPtr vertex_array, int array_length, double maxSize)$/;"	f
+normalsFromVertices	normals3D.c	/^vertexPtr normalsFromVertices (vertexPtr vertices, nodePtr faceList, int numVertices)$/;"	f
+normals_around_vertex	vertexGeometry.h	/^	nodePtr			normals_around_vertex;		\/\/ Normals of the faces around vertex$/;"	m	struct:vertexDataStruct
+null_cursor	glMain.c	/^Cursor		null_cursor;$/;"	v
+numEdges	object3D.h	/^	int			numEdges;$/;"	m	struct:objectStruct
+numFaces	object3D.h	/^	int			numFaces;$/;"	m	struct:objectStruct
+numNormals	object3D.h	/^	int			numNormals;$/;"	m	struct:objectStruct
+numPalettes	glGaussMap.c	/^int				numPalettes = 3;$/;"	v
+numVertices	object3D.h	/^	int			numVertices;$/;"	m	struct:objectStruct
+num_intersections	geometry.h	/^	int			num_intersections;$/;"	m	struct:vectorStruct
+objectPtr	object3D.h	/^typedef objectStruct* objectPtr;$/;"	t
+objectStruct	object3D.h	/^typedef struct objectStruct$/;"	s
+objectStruct	object3D.h	/^} objectStruct;$/;"	t	typeref:struct:objectStruct
+object_surface_area	faces.c	/^double object_surface_area (facePtr face_array, int num_faces, vertexPtr vertex_array)$/;"	f
+opposite_vertex_1	edges.h	/^	int			opposite_vertex_1;$/;"	m	struct:edgeStruct
+opposite_vertex_2	edges.h	/^	int			opposite_vertex_2;$/;"	m	struct:edgeStruct
+orderIntersectionsList	sphericalGeometry.c	/^void orderIntersectionsList (nodePtr* tmpList, int tmpLength, vectorPtr vector1, vectorPtr intersection)$/;"	f
+order_faces_around_vertex	gaussMap.c	/^nodePtr order_faces_around_vertex (nodePtr tempList, facePtr faceArray, int vertex_index)$/;"	f
+orientationFromVertices_2D	geometry.c	/^spinType orientationFromVertices_2D (vertexStruct vertex1, vertexStruct vertex2, vertexStruct vertex3)$/;"	f
+orientationFromVertices_3D	geometry.c	/^spinType orientationFromVertices_3D (vertexStruct vertex1, vertexStruct vertex2, vertexStruct vertex3, vectorStruct normal_vector)$/;"	f
+pointInsideFlatTriangle	geometry.c	/^boolean pointInsideFlatTriangle (vertexStruct vertex1, vertexStruct vertex2, vertexStruct vertex3, vertexStruct vertex4, vectorStruct plane_normal)$/;"	f
+pointInsideSphericalTriangle	sphericalGeometry.c	/^boolean pointInsideSphericalTriangle (vectorPtr vertex1, vectorPtr vertex2, vectorPtr vertex3, vectorPtr vertex4, spinType polygonOrientation)$/;"	f
+points_around_vertex	vertexGeometry.h	/^	int				points_around_vertex;$/;"	m	struct:vertexDataStruct
+printEdgeData	edges.c	/^void printEdgeData (edgePtr edge, faceStruct face_1, faceStruct face_2)$/;"	f
+printEdgeList	edges.c	/^void printEdgeList (nodePtr edgeList, int listLength)$/;"	f
+printFaceList	faces.c	/^void printFaceList (nodePtr list)$/;"	f
+printLinearMatrix	matrices.c	/^void printLinearMatrix (double linearMatrix[])$/;"	f
+printMatrix	matrices.c	/^void printMatrix (double a[][3])$/;"	f
+printProgressStar	tools.c	/^void printProgressStar (int counter, int total)$/;"	f
+printVectorList	geometry.c	/^void printVectorList (nodePtr list)$/;"	f
+printVertexArray	vertices.c	/^void printVertexArray (vertexPtr vertexArray, int length)$/;"	f
+printVertexList	vertices.c	/^void printVertexList (vertexPtr vertexArray, nodePtr list)$/;"	f
+print_convex_hull	convexHull3D.c	/^void print_convex_hull (nodePtr convexHull, vertexPtr vertexArray)$/;"	f
+print_faces_around_vertex	gaussMap.c	/^void print_faces_around_vertex (int vertex_id)$/;"	f
+print_integer_array	tools.c	/^void print_integer_array (int* array, int length)$/;"	f
+print_path	pathFinder.c	/^void print_path (nodePtr path_list)$/;"	f
+process_vertex	gaussMap.c	/^void process_vertex (int vertex_index)$/;"	f
+project_cone_on_plane	gaussMap.c	/^void project_cone_on_plane (vertexPtr vertexArray, vertexDataPtr current_vertex_data)$/;"	f
+project_vertex_on_plane	geometry.c	/^vertexStruct project_vertex_on_plane (vectorStruct plane_normal, vertexStruct plane_vertex, vertexStruct original_vertex)$/;"	f
+projected_vertices_array	vertexGeometry.h	/^	vertexPtr		projected_vertices_array;	\/\/ Neighbours projected on a plane$/;"	m	struct:vertexDataStruct
+prunePairsList	sphericalGeometry.c	/^void prunePairsList (nodePtr* extendedNormalList)$/;"	f
+quadratic	glDisplay.c	/^GLUquadricObj *quadratic;$/;"	v
+randomInt	tools.c	/^int randomInt (int max)$/;"	f
+readFace	objParser.c	/^facePtr readFace (FILE* OBJ_FD, boolean textured, boolean normals)$/;"	f
+readObjFile	objParser.c	/^objectStruct readObjFile (char* filename)$/;"	f
+readVertex	objParser.c	/^vertexPtr readVertex (FILE* OBJ_FD)$/;"	f
+recompute_edge_vertex_curvature	decimator.c	/^void recompute_edge_vertex_curvature (edgePtr edge)$/;"	f
+region_id	vertexGeometry.h	/^	int				region_id;$/;"	m	struct:vertexDataStruct
+register_face_changes	decimator.c	/^void register_face_changes (facePtr face)$/;"	f
+relaxedEqualVectors	geometry.c	/^boolean relaxedEqualVectors (vectorPtr vector1, vectorPtr vector2)$/;"	f
+removeNode	lists.c	/^void* removeNode (nodePtr* list, int itemPosition)$/;"	f
+remove_border_edges	edges.c	/^void remove_border_edges (nodePtr* edge_list, int* num_edges)$/;"	f
+remove_collinear_vertices	sphericalGeometry.c	/^nodePtr remove_collinear_vertices (nodePtr polygonList)$/;"	f
+remove_duplicate_normals	sphericalGeometry.c	/^void remove_duplicate_normals (nodePtr* normal_list)$/;"	f
+remove_minimal_curvature_vertex	decimator.c	/^int remove_minimal_curvature_vertex (void)$/;"	f
+remove_vertex_face	decimator.c	/^void remove_vertex_face (int vertex_index, int removed_face_id)$/;"	f
+reorderFace	faces.c	/^boolean reorderFace (facePtr face, int vertexIndex)$/;"	f
+resetTranslation	glDisplay.c	/^int		resetTranslation;$/;"	v
+resetX	glDisplay.c	/^int     resetX, resetY;$/;"	v
+resetY	glDisplay.c	/^int     resetX, resetY;$/;"	v
+rotateListNode	lists.c	/^void* rotateListNode (nodePtr* list)$/;"	f
+rotateToXYplane	glRotation.c	/^void rotateToXYplane (vectorPtr vector1, vectorPtr vector2, double gl_rotation_matrix[])$/;"	f
+rotationMatrixAroundVector	matrices.c	/^void rotationMatrixAroundVector (vectorPtr vector, double angle, double rotationMatrix[][3])$/;"	f
+run	glMain.c	/^int	run;$/;"	v
+rx	glDisplay.c	/^GLfloat	rx, ry;$/;"	v
+ry	glDisplay.c	/^GLfloat	rx, ry;$/;"	v
+scale	glDisplay.c	/^GLfloat	scale = 1.0f;$/;"	v
+screenshotCounter	glDisplay.c	/^int		screenshotCounter;$/;"	v
+segmentPtr	geometry.h	/^typedef segmentStruct* segmentPtr;$/;"	t
+segmentStruct	geometry.h	/^typedef struct segmentStruct$/;"	s
+segmentStruct	geometry.h	/^} segmentStruct;$/;"	t	typeref:struct:segmentStruct
+shade	glDisplay.c	/^GLuint	displayLight, displayTextures, mode, displayAxes, shade, displayNormals;$/;"	v
+sort_vertex_array	convexHull3D.c	/^void sort_vertex_array (vertexPtr vertexArray, int numVertices)$/;"	f
+sort_vertices_by_decimation_parameter	decimator.c	/^void sort_vertices_by_decimation_parameter (void)$/;"	f
+sphereAngleOrientation	sphericalGeometry.c	/^spinType sphereAngleOrientation (vectorPtr vector1, vectorPtr vector2, vectorPtr vector3, int type)$/;"	f
+spherical_polygon_list	vertexGeometry.h	/^	nodePtr			spherical_polygon_list;$/;"	m	struct:vertexDataStruct
+spherical_polygon_orientation	vertexGeometry.h	/^	spinType*		spherical_polygon_orientation;$/;"	m	struct:vertexDataStruct
+spinType	geometry.h	/^typedef enum {CW, CCW, COL}							spinType;$/;"	t	typeref:enum:__anon1
+splitSphericalPolygon	sphericalGeometry.c	/^nodePtr splitSphericalPolygon (nodePtr polygonList, nodePtr normalList)$/;"	f
+split_mixed_vertex	gaussMap.c	/^void split_mixed_vertex (int vertex_index, vertexPtr coneVertexArray, int coneVertexArrayLength)$/;"	f
+squareDistance	geometry.c	/^double squareDistance (vertexStruct vertex1, vertexStruct vertex2)$/;"	f
+start	glMain.c	/^    struct timeval start;$/;"	m	struct:timer	typeref:struct:timer::timeval	file:
+string	objParser.c	/^char*		string;$/;"	v
+sumVectors	geometry.c	/^vectorPtr sumVectors (vectorPtr vector1, vectorPtr vector2)$/;"	f
+surfaceArea	object3D.h	/^	double		surfaceArea;$/;"	m	struct:objectStruct
+swapPointIndex	vertices.c	/^void swapPointIndex (int* index1, int* index2)$/;"	f
+swapVertexIndex	vertices.c	/^void swapVertexIndex (int* index1, int* index2)$/;"	f
+testPolygonSplit	sphericalGeometry.c	/^nodePtr	testPolygonSplit (nodePtr polygonList, nodePtr normalList)$/;"	f
+testSegmentCurveIntersect	geometry.c	/^boolean testSegmentCurveIntersect (vertexPtr vertexArray, nodePtr curve, vertexStruct vertex1, vertexStruct vertex2)$/;"	f
+testSegmentsIntersect_2D	geometry.c	/^boolean testSegmentsIntersect_2D (vertexStruct vertexA1, vertexStruct vertexA2, vertexStruct vertexB1, vertexStruct vertexB2)$/;"	f
+testSegmentsIntersect_NotInclusive_2D	geometry.c	/^boolean testSegmentsIntersect_NotInclusive_2D (vertexStruct vertexA1, vertexStruct vertexA2, vertexStruct vertexB1, vertexStruct vertexB2)$/;"	f
+testTriangulation	gaussMap.c	/^void testTriangulation (nodePtr polygonList, spinType* orientations)$/;"	f
+texFont	glGaussMap.c	/^TexFont*		texFont = 0;$/;"	v
+timer	glMain.c	/^float timer( struct timer *t, int reset )$/;"	f
+timer	glMain.c	/^struct timer$/;"	s	file:
+transposeMatrix	matrices.c	/^void transposeMatrix (double original[][3], double inverted[][3])$/;"	f
+triangulateFlatPolygon	geometry.c	/^nodePtr triangulateFlatPolygon (vertexPtr vertexArray, nodePtr polygonList, vectorStruct plane_normal, nodePtr triangulation)$/;"	f
+triangulateSphericalPolygon	sphericalGeometry.c	/^void triangulateSphericalPolygon (nodePtr polygonList, spinType polygonOrientation)$/;"	f
+tv	glDisplay.c	/^struct	htime tv, mt;$/;"	v	typeref:struct:htime
+tx	glDisplay.c	/^GLfloat	tx, ty;$/;"	v
+ty	glDisplay.c	/^GLfloat	tx, ty;$/;"	v
+type	edges.h	/^	int			type;$/;"	m	struct:edgeStruct
+type	geometry.h	/^	vectorType	type;$/;"	m	struct:vectorStruct
+type	vertexGeometry.h	/^	vertexType		type;$/;"	m	struct:vertexDataStruct
+update_convex_hull	convexHull3D.c	/^void update_convex_hull (nodePtr edgeList, int vertex_index, nodePtr* convexHull)$/;"	f
+update_face_normal_vector	decimator.c	/^void update_face_normal_vector (facePtr face)$/;"	f
+update_flip_vertex_data	decimator.c	/^void update_flip_vertex_data (edgePtr edge)$/;"	f
+update_neighbour_edges	edges.c	/^nodePtr update_neighbour_edges (faceStruct face_1, faceStruct face_2, nodePtr edge_list, int num_edges)$/;"	f
+update_neighbour_triangles	decimator.c	/^nodePtr update_neighbour_triangles (int merge_vertex_id, int removed_vertex_id, vertexDataStruct current_vertex_data)$/;"	f
+update_neighbours_data	decimator.c	/^void update_neighbours_data (int removed_vertex_id, boolean border_vertex)$/;"	f
+update_sorted_decimation_array	decimator.c	/^void update_sorted_decimation_array (int vertex_index)$/;"	f
+update_visible_edges	convexHull3D.c	/^void update_visible_edges (nodePtr* edgeList, int v1, int v2, int v3)$/;"	f
+usage	decimator.c	/^void usage (char* programName)$/;"	f
+usage	gaussMap.c	/^void usage (char* programName)$/;"	f
+validate_edge_flip	decimator.c	/^boolean validate_edge_flip (edgePtr edge, facePtr face_1, facePtr face_2)$/;"	f
+validate_edges	decimator.c	/^void validate_edges (nodePtr* edge_list, int num_edges)$/;"	f
+vectorFromVertices	geometry.c	/^vectorPtr vectorFromVertices (vertexPtr vertex1, vertexPtr vertex2)$/;"	f
+vectorId	geometry.h	/^	int			vectorId;$/;"	m	struct:vectorStruct
+vectorLength	geometry.c	/^double vectorLength (vectorPtr vector)$/;"	f
+vectorPtr	geometry.h	/^typedef vectorStruct* vectorPtr;$/;"	t
+vectorStruct	geometry.h	/^typedef struct vectorStruct$/;"	s
+vectorStruct	geometry.h	/^} vectorStruct;$/;"	t	typeref:struct:vectorStruct
+vectorType	geometry.h	/^typedef enum {NORMAL, INTER, DOUBLE, SPLIT, VISITED, MATCH_1, MATCH_2}	vectorType;$/;"	t	typeref:enum:__anon3
+vector_equal_to_zero	geometry.c	/^boolean vector_equal_to_zero (vectorPtr vector)$/;"	f
+vertex	faces.h	/^	int			vertex[4];$/;"	m	struct:faceStruct
+vertex1	edges.h	/^	int			vertex1;$/;"	m	struct:edgeStruct
+vertex1	geometry.h	/^	int			vertex1;$/;"	m	struct:segmentStruct
+vertex2	edges.h	/^	int			vertex2;$/;"	m	struct:edgeStruct
+vertex2	geometry.h	/^	int			vertex2;$/;"	m	struct:segmentStruct
+vertexArray	object3D.h	/^	vertexPtr	vertexArray;$/;"	m	struct:objectStruct
+vertexArrayToList	vertices.c	/^nodePtr vertexArrayToList (vertexPtr array, int length)$/;"	f
+vertexDataPtr	vertexGeometry.h	/^typedef vertexDataStruct* vertexDataPtr;$/;"	t
+vertexDataStruct	vertexGeometry.h	/^typedef struct vertexDataStruct $/;"	s
+vertexDataStruct	vertexGeometry.h	/^} vertexDataStruct;$/;"	t	typeref:struct:vertexDataStruct
+vertexFaceArray	object3D.h	/^	nodePtr*	vertexFaceArray;$/;"	m	struct:objectStruct
+vertexId	decimator.c	/^	int		vertexId;$/;"	m	struct:decimationDataStruct	file:
+vertexId	vertices.h	/^	int     vertexId;$/;"	m	struct:vertexStruct
+vertexPtr	vertices.h	/^typedef vertexStruct* vertexPtr;$/;"	t
+vertexStruct	vertices.h	/^typedef struct vertexStruct$/;"	s
+vertexStruct	vertices.h	/^} vertexStruct;$/;"	t	typeref:struct:vertexStruct
+vertexType	vertices.h	/^typedef enum {FLAT, ALL_POS, ALL_NEG, MIXED, ALL_POS_CONCAVE, MIXED_CONCAVE}			vertexType;$/;"	t	typeref:enum:__anon5
+vertex_neighbour_index	vertexGeometry.h	/^	int*			vertex_neighbour_index;		\/\/ Indices of the neighbour vertices$/;"	m	struct:vertexDataStruct
+video_capture	glDisplay.c	/^GLuint	video_capture;$/;"	v
+visual_vertex_decimation	decimator.c	/^void visual_vertex_decimation (void)$/;"	f
+vx	glDisplay.c	/^GLfloat	vx, vy, vz;$/;"	v
+vy	glDisplay.c	/^GLfloat	vx, vy, vz;$/;"	v
+vz	glDisplay.c	/^GLfloat	vx, vy, vz;$/;"	v
+width	glDisplay.c	/^int	width, height;$/;"	v
+win	glMain.c	/^Window		win;$/;"	v
+wmDelete	glMain.c	/^Atom		wmDelete;$/;"	v
+write_obj_file	objWriter.c	/^void write_obj_file (objectStruct object_data, char* filename)$/;"	f
+write_off_file	offWriter.c	/^void write_off_file (objectStruct object_data, char* filename)$/;"	f
+write_ply_file	plyWriter.c	/^void write_ply_file (objectStruct object_data, char* filename)$/;"	f
+x	glDisplay.c	/^GLfloat	x, y, z;$/;"	v
+x	vertices.h	/^	double  x;$/;"	m	struct:vertexStruct
+xfopen	tools.c	/^FILE* xfopen (char* fileName, char* mode)$/;"	f
+xmalloc	tools.c	/^void* xmalloc (size_t size)$/;"	f
+y	glDisplay.c	/^GLfloat	x, y, z;$/;"	v
+y	vertices.h	/^	double  y;$/;"	m	struct:vertexStruct
+z	glDisplay.c	/^GLfloat	x, y, z;$/;"	v
+z	vertices.h	/^	double  z;$/;"	m	struct:vertexStruct

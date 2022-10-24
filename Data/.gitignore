@@ -1,0 +1,2 @@
+# Allow .obj files for 3D models
+!*.obj

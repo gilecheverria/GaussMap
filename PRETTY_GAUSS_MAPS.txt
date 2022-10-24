@@ -1,0 +1,2 @@
+Data/Lyuba_Saddles/saddleinter4_1.obj
+Data/torus_bad.obj			// in gaussMap-14092004.tgz

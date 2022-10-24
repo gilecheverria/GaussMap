@@ -1,0 +1,3 @@
+Problem: The end result should be a mix of the two other obj files provided, with two polygons, one positive and one negative. There needs to be a new split between the two areas.
+
+Solution: ????????????

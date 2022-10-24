@@ -1,0 +1,7 @@
+30 / 05 / 2006
+- Is there a mathematical proof of how many different kinds of intersections there can be in the arc segments of the spherical indicatrix?
+
+- Is the number of angles (convex or concave) in a spherical polygon any indication of the orientation of the polygon? Are there any limits to the number or kind of angles possible in a negative polygon (mathematically?)?
+
+- Meeting to study the functioning of the program. Identify kinds of intersections, what they represent, overlaps, "eating" polygons. Is there a way of knowing all types of interactions between two (or more) polygons?
+FIRST THING: Assume the program is completely unable to identify any kind of area or polygon.

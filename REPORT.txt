@@ -1,0 +1,244 @@
+General procedure to obtain the Gauss Map
+-----------------------------------------
+
+- Read the obj file containing the model of the object.
+- Assign the vertices and normals information to an objectPtr pointer to a structure.
+- For each of the vertices:
+	- Compute the locations where the arcs between the normals of the faces intersect with each other.
+	- Split the general Gauss Map into individual areas.
+	- Compute the area of each piece, and add them to the total for the vertex.
+
+
+Description of tasks ( 25 / 07 / 2006 )
+---------------------------------------
+
+- Read obj file
+	- List of vertices
+	- List of faces
+	- Find normals to faces and vertices
+- Fill in data structures
+	- Convert list of vertices into array
+	- Convert list of faces into array
+	- Numbers of vertices, faces, normals, faces per vertex.
+	- Array of faces per vertex (vertexFaceArray)
+
+- Generate gauss map
+	- procedure for each vertex
+	- Create array of vertex data structure (VertexDataArray)
+
+- For each vertex 'v'
+	- Get list of surrounding faces from vertexFaceArray, and order them around.
+	- Get Gaussian curvature (sum of angles of each face)
+	- Create array of vertices in the 'Star (v)', called coneVertexArray. Store it in VertexDataArray.
+	- Compute C.H. of the coneVertexArray.
+	- Get normal of the vertex.
+	- Project 'Start (v)' vertices on plane defined by normal. #NOTE: Maybe not necessary
+	- Get normals of the faces around vertex for indicatrix.
+		- Discard equal consecutive normals.
+		- If three consecutive vectors lie on the same plane, discard the one in the middle.
+		- Return at least one normal.
+	- #SPECIAL CASE: check for faces opposing each other. Add extra vector between them in this case.
+	- #SPECIAL CASE: identify loops in the indicatrix, as in monkey and penta saddles.
+		- Look for a repetition of the first vector.
+		- Check the size of the possible loop.
+		- Check that an integer number of loops are possible in the length of the list.
+		- Check that the same pattern occurs on all loops.
+	- Detect arc intersections.
+		- Identify type of intersection (normal, one endpoint, two endpoints)
+		- If two endpoints, check again.
+	- Find spherical polygons from extended list of vectors.
+	- Find area of spherical polygons
+		- Remove duplicate normals (to eliminate polygons formed only by intersection vectors (area = 0).
+		- Determine orientation of spherical polygons. #NOTE: Can/should be done before
+
+
+General procedure to display the Gauss Map
+------------------------------------------
+
+- Generate the display lists for each object.
+	- List for the object
+	- List for the normals
+	- List for the arcs
+	- List for the areas
+- Draw the display lists on the two scenes.
+
+
+Area of the Spherical Polygon
+-----------------------------
+
+To obtain the angles:
+Each angle is defined by three vectors in the unit sphere. The angle is computed for the point (vector) in the middle.
+Get the cross product of the two vectors that lie in a plane, to find the normal to such plane.
+Then get the cross product of the normal vector to the plane, and the vector at the point of interest, to find the vector perpendicular to the great circle that intersects the plane and the sphere.
+
+
+
+
+Using the formula:
+
+ S = (theta-[n-2]Pi)r^2 = (alpha-180[n-2])Pi r^2/180
+ where:		theta = sum of the angles, in radians
+ 			alpha = sum of the angles, in degrees
+
+From: http://mathforum.org/dr.math/faq/formulas/faq.ellipsoid.html
+
+
+Choosing of the correct area
+----------------------------
+
+Any spherical polygon will divide the sphere into two areas, and it is necessary to choose which one is the correct one. This way the orientation of the polygon is also determined.
+
+The criteria to choose the area is that spherical polygons must always have an area less than 2 Pi, or less than half a sphere.
+
+WRONG : There is an exception, a negative area can not have a length of the arcs greater than 2 Pi. So in these cases, even if the area will be positive, even if it is greater than 2 Pi.
+
+Yet another exception for the previous case. The area can be smaller than 2 Pi, but have length of arcs larger than 2 Pi if the vertex is a saddle (It does not belong to the convex hull.
+
+WRONG : Another failed hypothesis is that all negative areas will have an odd number of concave angles of the spherical polygon.
+
+
+Intersection of arcs
+--------------------
+
+Cross product of the two vectors that define an arc. This will produce the normal vector to the plane in which these vectors lie. The same is done for the other arc.
+
+Cross product of the two previously computed cross products. This will produce a vector in the direction of the intersection of the two great circles. There will be 2 intersections between these great circles, in the direction of the vector found and in the opposite direction.
+
+To find if this vector lies inside of an arc, compute the cross product of the first vector of the arc and the vector of intersection. Then a cross product of the vector of intersection and the second arc vector. If these two cross products are equal, then the intersection vector (or its opposite) is inside of the arc. To verify that the intersection vector is not pointing in the opposite direction, it is compared with one of the previously found cross products.
+
+The intersecting vectors for the two arcs are compared, and if they are equal, then that is the point where the arcs intersect.
+
+There is a special case when one of the normals for a face lies in the same place as an intersection of the arcs. In these cases, the same vector is used to mark the intersection. It is also necessary to add an extra vector to match it as a pair.
+
+
+Division of areas
+-----------------
+
+To draw the spherical polygons for the areas of the Gauss map, spheres are drawn and sliced, to show only the part of the sphere inside of the polygons.
+To be able to draw polygons with concavities, the polygons are drawn as a group of triangles. The area of the polygon is divided into triangles and then all of the triangles are drawn as a single object.
+
+
+Correction for the rotation matrix
+----------------------------------
+
+A special case can occur when reorienting the planes for the visualisation, using a rotation matrix. This happens when the fist of the two vectors of the new plane is equal to the -Y axis. In these cases, there is no need to perform any rotation normally, and the matrix is reset to cancel any rotation with respect to this vector. But there are cases when a slight rotation occurs around other axis, and then the rotation around Y must also be allowed.
+
+
+Alternate Display (Angles)
+--------------------------
+
+For the second colour scheme of the model, the angles around each vertex are computed, and subtracted from 2PI, to obtain a value that can be positive or negative, and is displayed accordingly on the model in two different colours.
+
+
+Determine the orientation of a turn in the faces of a vertex
+------------------------------------------------------------
+
+To determine if two faces of a vertex cone are turning inwards or outwards, use the following method:
+- Compute a reference vector, along the edge between the faces, in the direction of the vertex.
+- Get the cross product of the normal vectors to both faces, in the appropriate order.
+- Compute the dot product of the previous two vectors (cross and reference).
+- The angle will have the same sign as the dot product. If the faces turn inwards the angle is negative, if they turn outwards, the angle is positive.
+
+
+Computation of artificial vertex normal
+---------------------------------------
+
+Attempt to find a vector which could be normal to the general direction of a cone, taken from the vertex at the tip of the cone. The modifications are made in gaussMap.c (14/07/2005).
+The artificial normal vector is found as the sum of all of the edges that converge at the vertex, if these edges are considered as unit vectors.
+
+Later modification done motivated by the decimation project. Now the "cone normal" is taken as the average of the normal vectors of all the faces. This method does not work well with "figure 8" vertices, but is more reliable in the case of nearly flat vertices. It makes it easier to project such type of vertices into a plane, and then do a triangulation of the polygon formed. This is used to close the gaps produced by removing vertices in decimation.
+
+
+THEORY:
+
+From the drawing of the star curve it is always possible to remove one loop. Doing this, the sum of the angles of the star will be:
+
+(N - 1) * 2 * PI
+where N is the number of loops in the curve.
+
+
+NOTE:
+
+K+ - K- = Gaussian curvature + 2 * PI
+
+
+
+Splitting of Spherical Indicatrix into spherical polygons
+---------------------------------------------------------
+
+Algorithm used in "splitSphericalPolygon":
+
+Receives the list of polygons so far separated for this vertex and loop (as in the monkey saddle), and the list of normal vectors for the current vertex.
+Uses the global variable list of intersection pairs.
+Returns the list of polygons, augmented with those new ones found. This will be a list of lists.
+
+Two arrays of integers are created. One will store the number of vertices visited between each intersection pair. The other will keep track of the indices in the vector list, where the intersection vectors were found.
+
+MAIN LOOP BEGIN, while there are intersection pairs still active.
+Objective is to find matching pairs of vectors, and take all vectors in-between away as a spherical polygon. Doing this until there are no more pairs to identify.
+
+Take the next vector in the list.
+
+If it is of type INTER (intersection vector, not visited), check that the new vector does not match the pair of any of the previously visited INTER vectors.When the vector matches a pair, a note is made of the indices of the match: The index in the list of the current vector, and the index of the array, containing the location of the matching vector in the list.
+Afterwards, mark as visited the new vector, as well as all the intersection vectors between the pair just matched, thus eliminating them from the next searches. The entry in the list of pairs is also deleted.
+Next, make a count of the number of vectors between the matching ones. Then delete these vectors from the list of normals, in inverse order, from the last one to the first (to keep the counters under control), and insert them in a new list.
+The new list will begin with the first vector of the pair matched, but will not include the second vector in the pair. It will remain in the original list of normals, to be used as part of another polygon.
+The arrays of indices are cleared, variable "active_intersections" set to zero, the counter 'i' is set to the location of the first matching vector minus one (it will be incremented by 1 before restarting the loop), and the new list is inserted into the list of polygons.
+
+If the INTER vector does not match any pair yet, its position in the list is registered in the array. Also the variable 'active_intersections' is incremented; it holds the number of intersection vectors visited during the current search for a matching pair.
+
+If the vector is of type NORMAL, all the counters of in-between vectors for the intersection vectors just visited are incremented by one. This is done to ensure that a new polygon is not found to have only the two intersection vectors, next to each other, and nothing else.
+
+As a final step to avoid infinite loops, the list of pairs is checked again, eliminating those pairs for which both vectors involved are no longer in the list of normals. i.e. one or both of them have already gone into the polygon just found.
+
+END OF LOOP
+
+The remaining vectors in the list of normals, after all the intersection pairs have been eliminated, are inserted as the last polygon.
+
+
+Determining the intersections of the indicatrix
+-----------------------------------------------
+
+Within function 'findArcIntersections'
+
+Clear global variables.
+
+Do nothing if the list of normals is length 3 or less.
+
+LOOP 1 for each normal in the list
+
+Get the next two normals, which define an arc. Insert the first normal into a temporary list for this vector.
+
+LOOP 2 for each normal in the list
+
+Get two normals which are different and not next to the ones already selected.
+Test for an intersection of the two arcs, obtaining the point where the arcs intersect.
+
+If intersection inside of both arcs: New intersection vector added (negative index, type: INTER)
+	Match the pair, with vectors 1, 2, 3, 4
+
+If intersection at vector1: Vector1 is changed to type: INTER. It is already inserted in the temporary list, so no new vectors inserted.
+	Get the vector previous to 1: 1-1
+	Match the pair, with vectors 1-1, 2, 3, 4
+
+If intersection at vector3: New intersection vector added (negative index, type: INTER)
+	Get the vector previous to 3: 3-1
+	Match the pair, with vectors 1, 2, 3-1, 4
+NOTE: An intersection occurring at vector1 must later match an intersection in vector4, thus adding the extra vector needed to do the splitting.
+
+If intersection where two of the vectors meet (vector1, vector3): Vector1 is changed to type: INTER. It is already inserted in the temporary list, so no new vectors inserted.
+	Get the vector previous to 1: 1-1
+	Get the vector previous to 3: 3-1
+	Request a double check of the intersection, so that all four segments will be tested for intersection against each other. This is to avoid a false intersection detection in case the corners of two or more spherical polygons meet at one point.
+	Match the pair, with vectors 1-1, 2, 3-1, 4
+NOTE: An intersection of this type will later match another intersection also of this type.
+
+IMPORTANT: When adding intersection vectors to the list, these must be ordered, the same way as they would be found if doing a trip around the vertices. This is to make sure the splitting will be correct.
+
+END LOOP 2
+
+Add temporary list at the end of the extended normal list.
+
+END LOOP 1
+
+Get rid of pairs which have only one element (not matched)

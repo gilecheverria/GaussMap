@@ -1,0 +1,3 @@
+Problem: not being able to identify a loop in the normals. There should be 2 areas, but the program is set to identify them apart only if the loops are identical (i.e. monkey saddle / penta saddle).
+
+Solution: Reworking the identification of areas on the sphere. Or fix the algorithm to identify other kinds of loops.

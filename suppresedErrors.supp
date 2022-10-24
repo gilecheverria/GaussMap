@@ -1,0 +1,918 @@
+{
+	<insert a suppression name here>
+	Memcheck:Param
+	writev(vector[...])
+	fun:vgAllRoadsLeadToRome_writev
+	fun:__writev
+	fun:_X11TransSocketWritev
+	fun:_X11TransWritev
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Cond
+	fun:glMain
+	fun:main
+	fun:__libc_start_main
+	obj:/home/gilberto/GameZero/version-002/gameZero
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcResolveLocaleName
+	fun:initialize
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcCreateLC
+	fun:_XlcDefaultLoader
+	fun:_XlcDynamicLoad
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:load_public
+	fun:initialize
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:realloc
+	fun:add_codeset
+	fun:load_generic
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:add_charset
+	fun:load_generic
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XOpenLC
+	fun:_XlcCurrentLC
+	fun:_XF86LoadQueryLocaleFont
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:create
+	fun:_XlcCreateLC
+	fun:_XlcDefaultLoader
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XrmDefaultInitParseInfo
+	fun:_XrmInitParseInfo
+	fun:NewDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XextCreateExtension
+	fun:__glXFindDisplay
+	fun:__glXInitialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_dlerror_run
+	fun:dlopen@@GLIBC_2.1
+	fun:open_object
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcCreateLocaleDataBase
+	fun:load_public
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XauFileName
+	fun:XauGetBestAuthByAddr
+	fun:GetAuthorization
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XcursorFontIsCursor
+	fun:XcursorTryShapeCursor
+	fun:_XTryShapeCursor
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object_deps_internal
+	fun:dl_open_worker
+	fun:_dl_catch_error_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcAddCT
+	fun:_XlcInitCTInfo
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:PutEntry
+	fun:GetDatabase
+	fun:XrmGetStringDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:NewDatabase
+	fun:XrmGetStringDatabase
+	fun:InitDefaults
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object_internal
+	fun:dl_open_worker
+	fun:_dl_catch_error_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object_internal
+	fun:dl_open_worker
+	fun:_dl_catch_error_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:realloc
+	fun:PutEntry
+	fun:GetDatabase
+	fun:XrmGetStringDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:create
+	fun:_XlcCreateLC
+	fun:_XlcDefaultLoader
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:add_codeset
+	fun:load_generic
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:create
+	fun:_XlcCreateLC
+	fun:_XlcDefaultLoader
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object_deps_internal
+	fun:dl_open_worker
+	fun:_dl_catch_error_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_new_object
+	fun:_dl_map_object_from_fd
+	fun:_dl_map_object_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:append_value_list
+	fun:store_to_database
+	fun:f_newline
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:append_value_list
+	fun:store_to_database
+	fun:f_newline
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__GI___strdup
+	fun:resolve_object
+	fun:_XlcDynamicLoad
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:store_to_database
+	fun:f_newline
+	fun:CreateDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_dl_check_map_versions_internal
+	fun:dl_open_worker
+	fun:_dl_catch_error_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XF86BigfontQueryFont
+	fun:XQueryFont
+	fun:_XcursorFontIsCursor
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:store_to_database
+	fun:f_newline
+	fun:CreateDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcCreateLocaleDataBase
+	fun:load_public
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:resolve_object
+	fun:_XlcDynamicLoad
+	fun:_XOpenLC
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:store_to_database
+	fun:f_newline
+	fun:CreateDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcAddCharSet
+	fun:_XlcAddCT
+	fun:_XlcInitCTInfo
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XF86BigfontQueryFont
+	fun:XQueryFont
+	fun:_XcursorFontIsCursor
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcCreateDefaultCharSet
+	fun:_XlcAddCT
+	fun:_XlcInitCTInfo
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcSetConverter
+	fun:_XlcInitCTInfo
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:GrowTable
+	fun:GetDatabase
+	fun:XrmGetStringDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcCreateDefaultCharSet
+	fun:_XlcAddCT
+	fun:_XlcInitCTInfo
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:GrowTable
+	fun:GetDatabase
+	fun:XrmGetStringDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XGetVisualInfo
+	fun:glXChooseVisual
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcAddCT
+	fun:_XlcInitCTInfo
+	fun:initialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_dl_new_object
+	fun:_dl_map_object_from_fd
+	fun:_dl_map_object_internal
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:PutEntry
+	fun:GetDatabase
+	fun:XrmGetStringDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:init_parse_info
+	fun:CreateDatabase
+	fun:_XlcCreateLocaleDataBase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:ExpandQuarkTable
+	fun:_XrmInternalStringToQuark
+	fun:XrmStringToQuark
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__glXNewIndirectAPI
+	fun:glXMakeCurrent
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XlcCreateDefaultCharSet
+	fun:_XlcAddCT
+	fun:_XlcInitCTInfo
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:permalloc
+	fun:ExpandQuarkTable
+	fun:_XrmInternalStringToQuark
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XF86BigfontQueryFont
+	fun:XQueryFont
+	fun:_XcursorFontIsCursor
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__fopen_internal
+	fun:_IO_fopen@@GLIBC_2.1
+	fun:loadBMP
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:PutEntry
+	fun:GetDatabase
+	fun:XrmGetStringDatabase
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:XOpenDisplay
+	fun:glx_init
+	fun:glMain
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Param
+	ioctl(generic)
+	fun:ioctl
+	fun:drmOpenByBusid
+	fun:drmOpen
+	fun:__glXInitialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Addr2
+	fun:sigfpe_handler
+	fun:_math_init
+	fun:_mesa_initialize_context
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_X11TransParseAddress
+	fun:_X11TransOpen
+	fun:_X11TransConnectDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:driCreateDisplay
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:driCreateDisplay
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:driCreateDisplay
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_X11TransConnectDisplay
+	fun:XOpenDisplay
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__glXstrdup
+	fun:OpenDriver
+	fun:driGetDriver
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:driCreateDisplay
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+	fun:glXChooseVisual
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_dlerror_run
+	fun:dlsym
+	fun:__errno_location
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_X11TransSocketUNIXConnect
+	fun:_X11TransConnect
+	fun:_X11TransConnectDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_X11TransSocketUNIXConnect
+	fun:_X11TransConnect
+	fun:_X11TransConnectDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:OpenDriver
+	fun:driGetDriver
+	fun:driCreateDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object_deps
+	fun:dl_open_worker
+	fun:_dl_catch_error
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XOpenDisplay
+	fun:glx_init
+	fun:glMain
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object
+	fun:openaux
+	fun:_dl_catch_error
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:driCreateNewContext
+	fun:CreateContext
+	fun:glXCreateContext
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_XcmsAddCmapRec
+	fun:XCreateColormap
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XInitExtension
+	fun:XkbUseExtension
+	fun:XOpenDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XauFileName
+	fun:XauGetBestAuthByAddr
+	fun:_X11TransConnectDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XextAddDisplay
+	fun:__glXFindDisplay
+	fun:__glXInitialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_map_object
+	fun:dl_open_worker
+	fun:_dl_catch_error
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_X11TransSocketOpen
+	fun:_X11TransSocketOpenCOTSClientBase
+	fun:_X11TransOpen
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XUpdateAtomCache
+	fun:XInternAtom
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:driParseConfigFiles
+	fun:radeonCreateContext
+	fun:driCreateNewContext
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_dl_new_object
+	fun:_dl_map_object_from_fd
+	fun:_dl_map_object
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:optInfoStartElem
+	fun:doContent
+	fun:contentProcessor
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:XF86DRIGetDeviceInfo
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:add_to_global
+	fun:dl_open_worker
+	fun:_dl_catch_error
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:XkbUseExtension
+	fun:XOpenDisplay
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:XCreateGC
+	fun:XOpenDisplay
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__glXGetStringFromServer
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_dl_check_map_versions
+	fun:dl_open_worker
+	fun:_dl_catch_error
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:__driUtilCreateNewScreen
+	fun:__driCreateNewScreen
+	fun:__glXInitialize
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:XInitExtension
+	fun:XkbUseExtension
+	fun:XOpenDisplay
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_XInternAtom
+	fun:XInternAtom
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_XEnq
+	fun:_XReply
+	fun:XInternAtom
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:strerror
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:CreateContext
+	fun:glXCreateContext
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_dl_new_object
+	fun:_dl_map_object_from_fd
+	fun:_dl_map_object
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:CreateContext
+	fun:glXCreateContext
+	fun:glx_init
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:drmMalloc
+	fun:drmHashCreate
+	fun:__driUtilCreateNewScreen
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:malloc
+	fun:_gl_context_modes_create
+	fun:__glXInitialize
+	fun:GetGLXPrivScreenConfig
+}
+
+{
+	<insert a suppression name here>
+	Memcheck:Leak
+	fun:calloc
+	fun:_mesa_calloc
+	fun:radeonCreateScreen
+	fun:radeonInitDriver
+}

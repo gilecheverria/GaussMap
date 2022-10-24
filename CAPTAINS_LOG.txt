@@ -1,0 +1,482 @@
+Key words: 
+	PROGRAM_ERROR
+	SOLVED
+	TO_DO
+	DONE
+	THEORY
+
+
+21 / 10 / 2005
+- Added printing of the names of normal vectors. Both from faces and from intersections. Done using the text display functions from the game "Chromium".
+
+25 / 10 / 2005
+- Added printing of the face names, at the edges opposite to the vertex of interest.
+- Begun work on new form of path finding, using curvature as well. Still not working.
+
+26 / 10 / 2005
+- Found a problem in sample file: "../Game_On/Game_On/Objects/smooth_terrain.obj", for vertices: 69, 188 and 189. The areas are not correctly identified. [PROGRAM_ERROR: 001]
+- Tried integrating curvature into path finding, without useful results. Curvature by itself is a very variable cypher. Need to normalise it.
+- Added printing of the curvature value of each vertex in glGaussMap.c
+
+27 / 10 /2005
+- Created functions to streamline the enabling and disabling of GL_LIGHTING in several parts of the program. New functions: gl_no_lighting and gl_restore_lighting.
+- Path finding: Added extra computation of distance to the neighbours, as well as the destination. This is to take into consideration the altitude. It is not completely reliable, because of the way of deforming the mesh with Blender.
+- For path finding: Added a check for the closest points within the same region as the current vertex. Also a slight modification to make saddle vertices the priority. Decent results. Need to compute distances, costs of paths.
+
+28 / 10 / 2005
+- Path finding: Added the measurement of the length of a path, and of its variation in the Z axis.
+
+01 / 11 / 2005
+- Debugging of the program. [PROGRAM_ERROR: 002] Mistake when recursively triangulating a spherical polygon. Under a certain circumstance, an infinite recursion is produced.
+- [TO_DO: 001] Need to document the algorithm used for the triangulation.
+- SOLVED PROGRAM_ERROR: 002 ==> Added a check if the index of a point inside a triangle is less that the current index. In that case, increase the index of the point by the size of the list. Later use modulus to take out points.
+- Found another problem with the program. A new special case, where the first normal vector of a cone is later intersected by and arc. This will produce a self intersection when the last vector is connected with the first, but such self intersection is not detected. Occurs in "ideal_face.obj 5318", and in "smooth_terrain.obj 188/189". [PROGRAM_ERROR: 003]
+- There is another error in "smooth_terrain.obj 69", where a self intersection is not being detected, for another reason. [PROGRAM_ERROR: 004]
+- Worked on PROGRAM_ERROR: 004, partially solving it by fixing a check for an incorrect counter ('i' should be instead of 'j'). Still this reveals another error in "smooth_terrain.obj 70".
+
+03 / 11 / 2005
+- Produced doctored samples to show the possible use of curvature for path finding, for the Game_On conference. The program must be modified according to the sample data, in order to get the appropriate results. The description of how to do this is in: "~/Hallam/Game_On/Game_On/Latex/fake_simulation.txt". This still needs to be fixed.
+
+04 / 11 / 2005
+- Finished writing of Game_On paper.
+
+07 / 11 / 2005
+- Created obj file in Blender to show what the result of the vertex splitting must look like.
+
+08 / 11 / 2005
+- Created more Blender objects to check the requirements of the algorithm to split vertices.
+- Added new function "process_vertex" in gaussMap.c, to prepare for the splitting.
+
+09 / 11 / 2005
+- Tried to display an obj file with textures, based on Game_Zero. Unsuccessful attempt.
+- Fixed problem with not initialising VertexDataArray when running the program for only 1 vertex.
+- Added new function "project_vertex_on_plane", in geometry.c, which will be used to split mixed vertices.
+- Begun work on function "split_mixed_vertices".
+
+10 / 11 / 2005
+- Analysed the convex hull function. Found out some problems with it.
+
+11 / 11 / 2005
+- Changed function "clean_convex_hull_vertices" to "mark_convex_hull_vertices". It no longer is used only to check for valid vertices in the convex hull, the new function will mark all the vertices that appear as part of the convex hull. It is no longer called when computing the hull, but can be called elsewhere when needed.
+- Found that the function "getConeVertices" renames the vertices in the new array, according to their index in the array. This fact was used by the previous function "clean_convex_hull_vertices", but may cause trouble later on. Test whether the original vertexId's can be kept for reference in other functions.
+- Added a new empty element to VertexDataArray, so that the indexing will work in the same way as for vertexArray. This simplifies several of the indexes used throughout the program, removing the need to add or subtract 1 from the counters used.
+- Corrected the projection of a concave vertex on the convex hull of a cone. The vertex is projected over the normal of the face, but this is not good enough.
+
+14 / 11 / 2005
+- Found error in convex hull. In certain cases the same point will be taken twice in the initiall hull. Tried solving that by randomly using another point, no success yet [PROGRAM_ERROR: 005]
+- Compiled and tested "qhull". Seems to work fine, but interfacing with it seems difficult. Keep testing.
+- [TO_DO: 002] Add description of formula to project a point on a plane, in "geometry.c".
+- Created new samples of objects as they should be created by the splitting. New objects "object-11-1.obj" and "object-11-2.obj" show how it would be complex to get rid of several vertices not in the convex hull.
+
+15 / 11 / 2005
+- Work on installing GIMP 2.2.9, and GAP 2.2
+	- Remove previous RPM
+	- Download and install new RPM, including gimp-devel
+	- Install libart and libart-devel RPM's
+	- Install libjpeg and libjpeg-devel RPM's
+	- Install libtiff and libtiff-devel
+	- Install libmpeg2 and libmpeg2-devel
+	- Install wavplay 1.4
+
+16 / 11 / 2005
+- Got the conversion of tga files into an mpeg, using ImageMagick
+	- Install ImageMagick rpm's
+	- Install libmpeg2 rpm's
+	- Install mpeg2vidcodec_v12.tar.gz
+- Modified glDisplay, adding the function key '#' to start/stop video capture.
+- Modified glScreenCapture, to have filenames of the same length, independently of the counter up to 10,000.
+- Created animations for the path finding algorithm in all 4 cases, plus the original models.
+
+21 / 11 / 2005
+- Installed te_pdf RPM, to have the command pdflatex.
+
+28 / 11 / 2005 - 05 / 12 / 2005
+- Playing with Blender.
+
+07 / 12 / 2005
+- [TO_DO: 003] Create a proper description of how "findArcIntersection" deals with intersections at the endpoints.
+- About PROGRAM_ERROR: 004, found a mistake caused by changing the vectors for the endpoints of the segments. In the cases when the variable 'endpoint' is equal to 1 or 3, the corresponding vector was being changed, thus altering the rest of the checks for intersections. This can be solved by using a temporary vector to hold the new endpoints, just for the matching of the intersections.
+- Another problem is foreseen about the normals which are renamed because they lie in the point of an intersection. In these cases, it is necessary to keep track of said vectors, so that the matching of intersections doesn't fail to pair corresponding intersections.
+
+Examples: In "smooth_terrain.obj", vertex 70. There is an intersection at the normal 309. When 'vector3' is changed to be 349, or 'vector1' is changed to be 351, the rest of the checks are made with 'vector3'=349, 'vector4'=352, or with 'vector1'=351, 'vector2'=310. The result is the omission of another intersection detection for segments 309-310, 311-349.
+Even after solving this problem, since vector 309 is renamed to be an intersection vector: -???, it will not be matched with the corresponding intersection, unless the name of the vector is permanently changed in other places.
+
+20 / 01 / 2006
+- Modelling of Capsids (Hexon, Penton) with Georgios, using a perl program: "surfaceOfRevolution-hypocycloids.pl" and Blender.
+
+25 / 01 / 2006
+- Render demos of gaussian curvature in Blender.
+
+30 / 01 / 2006
+- Analysis of the files in Data/Bugs. The comments are in files with the same names as the obj files.
+- Tried to solve problem with saddle "saddle2inter3a.obj" in folder Bugs. Attempt at changing the criteria to invert the area from positive to negative in the case of saddle vertices. The new criteria would allow "figure 8" type vertices to have 3 concave angles if they appear within a saddle vertex. A new implementation to check that a vertex is part of its convex hull was done by using a new function "find_vertex_in_object" in faces.c, when applied to the convex hull. The experiment failed, since the spherical polygons recognised by the program do not correspond to the ones that needed to be inverted. The correct solution would require to draw a new line to split the spherical polygons in another place.
+- [THEORY: 001]: There can only exist two types of spherical polygons with positive curvature. They must be either of type "circle", or type "8". These can be nested within each other several types. For every other more complex shape it is possible to unwind until a combination of the two basic types is obtained, and the Gauss Map will be equivalent to that of the basic shape.
+  It is not possible to unwind an "8" into a "0", since doing so would go through a singularity step where the normals are inverted (going from inwards to outwards or viceversa).
+  The Gauss Map of a complex vertex is also equivalent to the one for the sum of several smaller parts. That is, a complex cone can be split into more simple ones, and the final result should be equal to the sum of the parts.
+
+31 / 01 / 2006
+- Testing of objects in "Data/Bugs".
+- [TO_DO: 004] Document the criteria to determine when a spherical polygon is positive or negative. Use THEORY: 001, and describe why polygons in non-intersecting vertices will always be less than 2*PI in area.
+- Fixed the computation of the gaussian curvature for vertices on edges. This required some reordering of the tasks performed during the processing of a vertex. Vertices of each face must be reordered to put the vertex of interest first (function: "reorderFace"). This is done inside of "order_faces_around_vertex", to avoid problems when sorting the faces. Gaussian curvature is computed after all of this is done. Then a simple test of the first and last neighbouring vertices is used to see if the vertex is normal (if fist and last are equal), or it lies on an edge. Finally, the formula for the actual computation is chosen, by subtracting from PI or 2*PI.
+
+01 / 02 / 2006
+- Modified "findArcIntersections" to remove some indented brackets, by using the instruction "continue".
+- [TO_DO: 005] Locate where the duplicated or coplanar normal vectors are removed. Make sure it is done always.
+
+06 / 02 / 2006
+- More work on the "Bugs" objects, and in a related problem with PROGRAM_ERROR: 004. Modifying "findArcIntersections", so that always the original names of the endpoints of arcs are stored, solves the situation with objects "Bugs/cone07-problem.obj" and "Bugs/cone10-problem.obj", but reverts to the errors found in "smooth_terrain.obj". It is necessary to find a common naming rule for the vectors, that will satisfy all cases.
+
+08 / 02 / 2006
+- Modified "findArcIntersection" to get rid of some redundant checks, such as same vectors, or vertices with only one normal (flat vertices). This are now handled by skipping over the whole process when a vertex has less than 4 vertices, since in those cases, there will never be self intersections.
+- Changed "findArcIntersection" at the switch(endpoint) control structure. Now the cases 2 and 4 do nothing, and the intersection vectors are always inserted in cases 1 and 3. This solves all the missing intersections in the file "smooth_terrain.obj". The problem with some vertices (i.e. 188, 189) was that because of the ordering of the faces, the first vertex would be an intersection, getting endpoint == 1, but since the "warning_arc1" flag was down, the intersection was not registered, and at the end it would not be checked again. Some test was done when not using the "warning_arc#" flags, and it seemed to work fine in all files.
+- Based on the previous solution, another modification was made to "arcIntersection", where the variable "endpoint" now stores information in a binary fashion, using logical or, and values posers of 2. In this way, the variable can be used to detect when an intersection occurs at the location of two vectors. Without any other modifications to "findArcIntersection", this solves the cases for "Data/Bugs/cone07-problem.obj" and "cone10-problem.obj". The side effect is that a lot of self intersections are found. The ultimately produce spherical polygons with area 0, which are discarded later. To correct this, it would be necessary to modify "findArcIntersection" to handle the case of double endpoints accordingly.
+
+09 / 02 / 2006
+- Modified "findArcIntersection", adding a new case for "switch (endpoint)", especially for double intersections at a face normal. From the experiments, it is enough to register case 5, when vector1 and vector3 are the endpoints. Vector1 will already be inserted, so it is only a matter of labelling it as an intersection vector, basically the same as in case 1. When there are three vectors in the same intersection, this solution is not enough, since one of the vectors has no match. The solution found is to duplicate a vector when it is found to be the endpoint in the same circumstances, thus making enough vectors at the intersection to match.
+- SOLVED PROGRAM_ERROR: 001 003 004. All these were related problems about the detection of intersections in the arcs, especially when there is a face normal in the same location as an arc intersection. The previously described methods work together to solve most problems found so far for convex cones. Still need to work on saddles.
+- New problems have arisen from the solutions implemented:
+	Data/Cones/cone08-si-a.obj and similar: Trapped in a loop. [PROGRAM_ERROR: 006]
+	Data/Cones/cone12-1.obj: Several normals overlap, even if there is no self intersection. The new rules detect those vectors as intersections nevertheless, and apparently delete a few of them. The result is that at some point the lists can not be traversed in full, exiting with an error. [PROGRAM_ERROR: 007]
+	Data/Bugs/cone08-si-7a.obj and similar: A part of a polygon is not counted. Probably because of a problem in "splitSphericalPolygon". [PROGRAM_ERROR: 008]
+- Commented the computations of the angles around the projection of the vertices of a cone. It is not used at the moment, and was producing some errors because of divisions by zero. The function "getProjectedStarAngle" was also modified to return zero if it gets an array with less than 3 elements, to prevent the divisions by zero.
+- Found an error in the formula for the crossProduct. If two vectors are collinear in opposite directions, it is possible to get a cross product equal to zero. Look for a solution to this on Internet. Example: /Data/Bugs/cone08-si-7a.obj
+
+13 / 02 / 2006
+/*
+- SOLVED PROGRAM_ERROR: 007. An intersection was being found when two face vectors are in the same place (meaning that their arcs touch each other) even if the arcs don't intersect. A quick fix for this problem is to make an extra check, only for "case 5:" in the switch statement. Two new intersection tests are done, between a new arc joining the neighbours of one of the conflicting vectors, and the two arcs containing the other conflicting normal. If none of these tests is positive, then there should be no intersection.
+*/
+- Found lots of problems and errors with the detection of intersections:
+	Data/Bugs/cone04-si+s-4check.obj does not work with the fix above, because when doing the double_check tests for intersections, it is not identifying an intersection between segments: 2-4 and 9-1, when there should be one.
+	Data/Bugs/cone05-si-4.obj also stops working with the previous fix, although it is not understood why it was working before it.
+	Data/Bugs/cone10-problem.obj does not work anymore, because of the modifications to "crossProduct" to normalise the resulting vector. In many cases, the vectors obtained in "arcIntersection" are equal to zero, and this causes some problems. A partial solution found is to allow for some tolerance when comparing vectors in "arcIntersection", but it may cause troubles in other objects. Also to fix this file, it is now necessary to duplicate all vectors in the intersection (vectors 1, 4 and 7). This produces extra duplicate vectors which later cause a division by zero when computing the angles for the area.
+	New data files in Data/Bugs: cone13-problem.obj and cone16-problem.obj. Neither of them works at the moment.
+
+15 / 02 / 2006
+- Found a possible problem in "splitSphericalPolygon". After a polygon has been identified, the process begins again from the first vertex in the list, and not with the last one visited, where the previous polygon closed. This can produce varying interpretations of the areas, as is the case of Data/Bugs/cone10-problem.obj. Although the total area must remain the same, the shape of the polygons can change.
+- For that same file, tried to limit the number of normals repeated because of double intersections. This was done by exiting the switch statement if the vectors are 1 and 4. This does avoid some repetitions, but the polygons found are still not optimal, and some of the spherical polygons still have a duplicate of a vector.
+- Another error in "splitSphericalPolygon". The line:
+                tmpVector = (vectorPtr) getNodeData (normalListCopy, intersectionIndex[j]);
+allows for j to be greater than the size of the array "intersectionIndex".
+- [TO_DO: 006] Find out when is the variable "skip" used in "splitSphericalPolygon". It may not be necessary any longer.
+- Solved problems with cone??-problem.obj, using a modification to splitSphericalPolygon. It now eliminates pairs for which one or both of the vectors involved no longer remain on the list of pending vectors. In this case, it is not necessary to duplicate any of the vectors involved; the ones existing should always be sufficient to complete all the possible polygons formed. Testing still pending for other files and cases.
+
+16 / 02 / 2006
+- Done testing of other files using the modification last mentioned. Apparently all cases work normally. File Data/Cones/cone12-1.obj no longer causes an error, but produces an incorrect map because of the detection of false intersections.
+- Done testing when eliminating the test for loops within the normals, as is the case of monkey and penta saddles. These two files do require the testing for loops, but they seem to be the only ones. So the test will only solve the problem when required. It will be left as it is for the moment, since it complements the new intersection detection. The intersections would not be detected in precisely these cases.
+
+17 / 02 / 2006
+- The solution to PROGRAM_ERROR: 007 still causes problems with file Data/Bugs/cone04-si+s-4check.obj.
+- The file Data/Bugs/penta-saddlenew-inter2.obj is not working properly with the last modifications to the program. Reason unknown.
+
+20 / 02 / 2006
+- Created new obj files: Data/Bugs/test-saddle*.obj where the "figure 8" shapes on one side of the saddles are duplicated to be symmetrical. The results obtained are not very clear on these files.
+
+27 / 02 / 2006
+- SOLVED PROGRAM_ERROR: 007. Added two more intersection tests to the Double Check section in 'findArcIntersection'. It is necessary to make 4 intersection tests, for all the possible segments involved, test for intersections of 1-1 - 2 against 3-1 - 3 and 3 - 4, and also do 3-1 - 4 against 1-1 - 1, and 1 - 2. There will be an intersection if any of these is positive.
+
+28 / 02 / 2006
+- [TO_DO: 007] Create new program, based on Reconstructor, which takes a profile of a face and identifies the nose, either horizontally or vertically.
+- [PROGRAM_ERROR: 009] In Data/Game_On/ground_surface.obj 93
+- [PROGRAM_ERROR: 010] In Data/Game_On/obstacle_surface_2.obj 84, 164
+- [PROGRAM_ERROR: 011] In Data/Q-be/cube-05.obj 9 and Data/Q-be/cube-07.obj 9
+- Added new function "remove_duplicate_normals" in "sphericalGeometry.c", to get rid of double intersection vectors in the spherical polygons. This caused a problem when computing the area, because the angle around these duplicate vectors could not be computed, returning zero from "angleBetweenVectors", but the vectors were still counted for the formula of the area.
+
+01 / 03 / 2006
+- SOLVED PROGRAM_ERROR: 011, by adding a new function "double_check_intersection" and making it take into account the endpoint of the test intersections. From the observations, if endpoint is 6 or 9, the intersection should be ignored, as it should be caused by coplanar arcs. More tests need to be carried, so see if this has not affected other cases.
+- Began working on Face_Profile project, to simplify the algorithms in Reconstructor, so that they can be applied to the face identification system.
+
+02 / 03 / 2006
+- Fixed Face_Profile. Because of the empty vertex at the beginning of the vertexArray, which was not in Reconstructor, there was a mistake in the computation of the curve for the profile. Some modifications were made in vertices.c to take this into account and correct the curve.
+- [TO_DO: 008] In GaussMap: Classify the vertices of positive curvature into either convex or concave, based on the angles of the normals of the faces.
+- [TO_DO: 009] For Data/Bugs/cone08-si-a.obj and similar: The problem here is that the normals of two contiguous faces are completely opposite, and hence produce a crossProduct equal to zero. To solve this, use two new normal vectors, corresponding to the sides of a pyramid, if the faces in question are the front and back of said pyramid. It is the same case as when the sides of the pyramid are extremely small, and tend to zero. This will help to identify the correct area on the sphere that corresponds to the vertex.
+
+03 / 03 / 2006
+- Added computation of new vertex to close the curve of the profiles. New point is perpendicular to the line that joins the first and last points of the data, and at the same distance from both points.
+- [TO_DO: 010] Understand and add explanation of how the algorithm works to compute the new coordinates of the point.
+
+07 / 03 / 2006
+- Removed some of the source files which are not necessary for the face profile project, in order to simplify its use in another application.
+- Began work on the decimator of 3D models, based on the TAC.
+- MAJOR_CHANGES:
+	* Added the files related to the decimator to the GaussMap directory.
+	* Removed parts of code about path finding from gaussMap.c.
+	* Commented 3 lines of code in "getConeVertices", in gaussMap.c; these lines changed the names of the vertices in the cones to a simple counter. The algorithms in decimator may need that the vertexId's are kept to the original names. Testing will be done to ensure this does not disrupt other functions (apparently it shouldn't).
+/*
+	* Same done in "project_cone_on_plane". vertexId changed to keep otiginal name.
+*/
+	* Changed "project_cone_on_plane". The vertexId is now set according to the counter, but is now positive.
+	* Added functions for bad triangulation of flat polygons, based on the algorithm used for spherical polygons. Still not working, but in some cases some triangulation is obtained.
+
+08 / 03 / 2006
+- Added new function "get_average_normal" in gaussMap.c, to replace getArtificialNormal. This new function is more reliable in the case of almost flat vertices, and more useful for use in the decimator triangulation. Why was the previous function necessary?
+
+09 / 03 / 2006
+- Functions to update the vertices affected after removing a vertex doing decimation.
+
+10 / 03 / 2006
+- Debugging of decimation.
+
+13 / 03 / 2006
+- Solved a problem with the display of the Gauss Maps for the recomputed vertices. The problem was an incorrect indexing used for creating the display lists in OpenGL. Solved using parenthesis to correct the order of the operations to obtain the correct indexes.
+
+14 / 03 / 2006
+- Modified decimator to work several times, when prompted from the OpenGL display (currently by pressing the key '9'). The program eventually enters an infinite loop because the new triangles created may not be consistent.
+- Merged the Willie's code with the profile, to obtain a program which takes a full obj of a face and computes the curvature.
+
+15 / 03 / 2006
+- Modified Complete_Face_Measure, to normalise the sizes of the vertices only when doing the OpenGL display. This will keep the measurements more consistent and reliable.
+- [TO_DO: 011] Do the same modification for all other programs: GaussMap, FaceProfile, etc. Modiffications necesary to vertices.c, objParser, gl$program, object3d.h.
+- Done previous modification to FaceProfile. Still need GaussMap, ObjReader, Reconstructor?
+
+16 / 03 / 2006
+- Modified Complete_Face_Measure to read its input from a cfg file, which includes the path to the obj file, as well as the measurements for the right and left eye.
+- Modified GaussMap to make the adjustment of the vertices only for display, according to [TO_DO:011].
+- Found a problem with GaussMap/Decimator. 'Data/teddy.obj' is causing a segmentation fault, for reason unknown. [PROGRAM_ERROR: 012]
+- [TO_DO: 012] Add texturing to ObjReader-3.0
+
+12 / 04 / 2006
+- Corrected program Complete_Face_Measure. Eliminated the print to file of the data for the vertical profile, on the grounds that it is not reliable data on all possible scans.
+- Checked the computation of Gaussian curvature. There was a mysterious error due to some modifications to the program. Apparently it all works normally again. Gaussian curvature is different than the sum of positive and negative curvatures for vertices with self intersections. This is the whole reason for this project, I think.
+
+16 / 04 / 2006
+- Corrected problem with indexing of the lists in decimation. Don't remember why, the length of the array of projected vertices was incorrect. This caused a problem when converting said array into a list. And further, the conversion already takes away the empty element at the beginning of the array, but an extra element was taken away back in decimator. The cause of the problem seems to be the changes done in TO_DO: 011, possibly the conversion from array to list has modified then. The problem was solved by decreasing the length of the array sent to vertexArrayToList, and removing a line of "removeNode (&polygon_list, 0)" from decimator.c: remove_minimal_curvature_vertex.
+- Began work on changing the recursive function: triangulateFlatPolygon, so that it does not require a global variable to store its results. It now receives a list as an extra parameter, and modifies and returns the same list. So far, everything seems to work fine.
+- Managed to get "gaussMap" to compile. It is necessary to comment the instructions in glGaussMap.c for the removal of vertices by decimation. Also to uncomment the "main" function in gaussMap.c
+
+19 / 04 / 2006
+- Modified the formula to compute the location of the back point in Complete_Face_Measure. It is now more consistent with the rules of trigonometry, more intuitive. Changed to use tangent instead of cosine, to better preserve the sign of the angle. See TO_DO: 010.
+
+20 / 04 / 2006
+- Added new function "check_opposite_vectors" in sphericalGeometry.c, to insert new vectors between pairs of opposite normals, and thus give a correct direction to the arcs between the normals. This function is called from gaussMap.c
+- Modified function "remove_collinear_vertices" in sphericalGeometry.c. To avoid removing the vectors inserted because of the previous note. Testing required, but main test base, Data/Bugs/cone02-1.obj is working.
+
+24 / 04 / 2006
+- Analysis of "splitSphericalPolygon". Description in REPORT.txt
+
+25 / 04 / 2006
+- Tests with different order for the vertices in an obj file. It turns out the spherical polygons, splitting and areas found can vary according to which is the first arc intersection to be found during the analysis.
+
+26 / 04 /2006
+- Corrected an error in convexHull3D.c, in the function "sort_vertex_array". The flag "swapVertices" was not being reset after each loop, making the algorithm swap vertices always after the first one.
+- [TO_DO: 013] Check that other sort algorithms do not have the same problem.
+- Major modification to "convex hull" algorithm. It relied on the vertexId's and indexes of the vertices in the arrays to be the same, and mixed both concepts. It would work when getting the C.H. of the whole object, but not of subsets, as in the coneVertexArrays. Now the triangles in the convex hull hold indices that relate to the array of sorted vertices. THIS IS NOT GOOD!!!! Because it will require to store the sorted array as well. Better to have the indexing be relative to the unsorted array received by "conpute_3D_Convex_Hull".
+- [TO_DO: 014] Use the array of vertices sorted by coordinates only to obtain the initial hull. Then realte the indices in that array to those of the original array passed to the function, and use that array to obtain the rest of the hull.
+
+27 / 04 / 2006
+- Changed the indexes of the convex hull, to correspond to the vertex array received as a parameter. The triangles obtained for the object data, and for a vertex data are not equal, even if both vertexArrays contain the same amount of points (but in different order).
+- Changed function "find_vertex_in_object" to receive as a parameter an array of vertices. It will use the vertexId's in this array, instead of the indices held in the triangle list. This to make it consistent with previous changes, and more reliable in the case of C.H. of coneVertexArrays.
+
+03 / 05 / 2006
+- [TO_DO: 015] Solve problem or ordering of the vertices in the obj file. The same object will produce very different Gauss Maps, depending on the order in which the vertices are given.
+- [TO_DO: 016] Make sure that all red areas are convex. In the case of "figure 8" vertices, two convex areas are together to form a more complex one which can have 2 concavities. If the "figure 8" appears in a saddle, then it is allowed more concavities, but only if at these points the arcs intersect, and two polygons meet, one positive an the other negative. In the same way, if closing concavities of a positive area, it is also necessary to add extra blue areas that will be cancelling the red ones.
+
+04 / 05 / 2006
+- Algorithm proposed by Lyuba: To determine where to start doing the splitting: Do "splitSphericalPolygon" begining with each normal vector in the cone. Keep the result which provides the largest arc length polygon.
+- Algorithm proposed by Lyuba: To determine the sign of a spherical polygon, count the number of concave angles. Do not consider special cases where:
+	1. Vertex connects two areas that do not overlap.
+	2. Two areas are cancelling each other.
+
+08 / 05 / 2006
+- [TO_DO: 017] Correct Convex Hull algorithm.
+
+15 / 05 / 2006
+- Made a correction to 'findArcIntersection'. It now clears the 'IntersectionPair' lists before beginning to look for intersections. Pairs found for previous vertices were causing problems, as in 'venus.obj 6'.
+- Added function 'testPolygonSplit' to sphericalGeometry.c. This will cycle through the list of normals, to make it begin at different vectors, and call 'splitSphericalPolygon' for each possibility. It then measures the lengths of the perimeters of the polygons found, and in the end will select which order of the normal vectors produces the longest perimeter. This will be the combination selected.
+- Modified 'splitSphericalPolygon'. It now makes use of the IntersectionPairsCopy list, so that when trying multiple times the splitting for the same vertex, it will still have something to work with. Otherwise, the firs call to the function will clear the list, and subsequent calls would return a single polygon with all normal vectors in it.
+
+17 / 05 / 2006
+- Modified 'testPolygonSplit' to also use a copy of the normalList, so that the original will not be modified. The original list is later used to display the names of the normals in OpenGL.
+- Discovered problem with the use of 'testPolygonSplit'. File Data/Cones/cone08-si-7.obj will identify a completely different set of polygons, and generate an incorrect result. [PROGRAM_ERROR: 013]
+
+18 / 05 / 2006
+- Modified function 'testPolygonSplit'. It now uses the number of changes in the direction of the angles in the spherical polygons. The number of changes for all polygons of a vector ordering is added together. The ordering with the least amount of changes is selected in the end. Not optimal yet.
+- Modified 'findSphericalAngle'. It now has also a case for collinear angles, and not only CONVEX or CONCAVE. This causes problem with Data/Bugs/sadlesimple-inters6.obj
+- [TO_DO: 018] Try using number of concave angles as the parameter to minimise, when choosing the vector ordering.
+
+19 / 05 / 2006
+- Modified 'testPolygonSplit' to count the number of concave angles in a polygon, based on a preeliminary guess at the orientation of a polygon.
+- Modified the function 'find_spherical_polygon_orientation'.
+
+22 / 05 / 2006
+- Modified 'findSphericalPolygonArea'. It now uses the function 'find_spherical_polygon_orientation' to determine which colour to give to each area. Works fine for most samples, but some problems.
+
+25 / 05 / 2006
+- Analysis of 'findArcIntersection'.
+- Found the function 'orderIntersectionsList' may be bug-riddled.
+- [TO_DO: 019] Check function 'orderIntersectionsList' for the case when an intersection occurs at vector1. Also make sure the case when tmpList is 0 will occur.
+
+26 / 05 / 2006
+- Discovered an problem with the rotation of the vector lists on files Data/Bugs/cone1?-problem.obj, in these, some rotation of the list will cause an error, because the matching intersection vectors are already marked as VISITED, so none of them is ever checked again, leaving an intersectionPair free forever. [PROGRAM_ERROR: 014]
+
+30 / 05 / 2006
+- Experiments to solve PROGRAM_ERROR: 014, by identifying the intersection vectors which are repeated on more than one pairs.
+- Tried marking these kind of vectors as DOUBLE, since findArcIntersection. Failed so far. Forgot to modify 'splitSphericalPolygon' to consider these type of vertices as well to find matches. Still may not work, since it does not identify how many intersections occur at that point.
+- Another modification to 'splitSphericalPolygon'. Matching vectors are now marked as type SPLIT, to identify where two polygons meet. Still necessary to find a way to preserve the pair information to match neighbouring polygons later on.
+- [TO_DO: 020] New idea. It is possible to count the number of intersections found at a normal vector, while still in 'findArcIntersection' (case: 5) This information could be stored in a 7th field in the IntersectionPairs. When a vector of this kind matches an intersection, then update IntersectionPairs list by reducing this new field by one, on all pairs including the current vector. Related to PROGRAM_ERROR: 014.
+
+31 / 05 / 2006
+- DONE TO_DO: 020. The counter for the number of intersections occurring in a vector is stored as a new field in 'vectorStruct'. This counter is initialised to zero for all normal vectors, and in the case of new intersections vectors, initialised to one. Only for normal vectors will it increase. Initial tests are not working right, since another problem occurs on the same files.
+
+02 / 05 / 2006
+- [TO_DO: 021] Check that the tests for endpoint intersections in 'arcIntersection' are correct. Deleting the cross product variables and substituting could cause trouble, in a very specific case where the arc endpoints have an angle of 270 degrees. (Is this case possible?)
+- Partially solved PROGRAM_ERROR: 014. The function 'splitSphericalPolygon' no longer looks for vectors with type INTER to do the checking, but relies entirely on the new field 'num_intersections' to determine whether a vector is valid for pair matching. Each time a vector matches an intersection, the variable is reduced by one. Still a problem with cone16-problem.obj
+
+05 / 06 / 2006
+- Added function to alter results obtained for file Data/Bugs/penta-saddlenew-inter1.obj. The large positive polygons is split into two polygons, one positive and one negative. The splitting is done by copying the vectors in common for both polygons (the intersection vectors), and moving the rest of the vectors that correspond to the positive area into a new polygon list.
+
+06 / 06 / 2006
+- Added instructions to free memory in 'testPolygonSplit'.
+
+22 / 06 / 2006
+- Minor change to sphericalGeometry.c: added an extra check, so that the variable 'active_intersections' can not be larger than 'pairsLength'. Still this is only a temporary solution. Necessary to make a better validation, and not allow for an endless loop around the list of vectors.
+- Correction of the function 'build_new_face' in decimator.c. It was missing the initialising of the new normal vectors for the faces to be type NORMAL, and have num_intersections equal to 0.
+
+11 / 07 / 2006
+- Found new error in 'Data/venus.obj 31, 163, etc'. Reason unknown [PROGRAM_ERROR: 015]
+- Possibly due to the new test for the orientation of the spherical polygons, based only on the number of angle turns.
+- Modified function "get_average_normal" in gaussMap.c. It doesn't make an average of the face normals any more. Now it only converts the vertex normal found in objParser.c from a vertexStruct to a vectorStruct.
+
+12 / 07 / 2006
+- [TO_DO: 022] Add a procedure to reorder the edges of triangulated polygons after decimation, in order to decrease the curvature of the polygon.
+
+25 / 07 / 2006
+- About PROGRAM_ERROR: 015 In the case of vertex 163, the count of convex and concave angles is done incorrectly, since the function 'find_spherical_polygon_orientation' is counting all angles, and not only the changes in orientation, as it is supposed to do. Also the variable 'concave_angle_total' is incremented, but then overwritten. When returning the value of such variable, the behaviour expected is different in the two callings of the function. The one currently in place is expected in 'findSphericalPolygonArea', but that part is commented at the moment. The other behaviour is expected by 'testPolygonSplit', also not always in use.
+- Having the function count only the number of changes in direction of the angles will make it more reliable to predict the orientation of a spherical polygon, but it is still necessary to do a second check when the number of concave and convex angles is the same. In this case, it will probably be necessary to do a check of whether the vertex is a saddle or a cone, and then do another test accordingly.
+
+26 / 07 / 2006
+- About PROGRAM_ERROR: 015 Modified the function 'find_spherical_polygon_orientation' to make independent counts of the number of orientation changes, and of angles. It will then base a decision of the orientation of the polygon on the number of direction changes. If these are equal, then use the number of angles. It still does not solve the case of Data/venus.obj 163.
+
+31 / 07 / 2006
+- Corrected the method to write a decimated mesh into an obj file. A new function copies the vertices and faces that are still active in the mesh into new lists, then creates a new objectStruct with this data, and uses it to write into a file. The new function, 'get_decimated_object', is in decimator.c, but its declaration is in objWriter.h, to avoid problems when compiling only gaussMap. Though there may still be problems arising from this.
+- New problem identified: The indicatrix of vertex 'hawaii.obj 3532' has two segments connected by coplanar normals. This is making it difficult to identify the correct areas. [PROGRAM_ERROR: 016]
+- Problem may come from 'findArcIntersection', since it should avoid reporting intersections of two coplanar arcs. So one solution is to eliminate this intersection. The other solution would be to modify 'splitSphericalPolygon'.
+- Implemented solution by rejecting intersections of coplanar arcs, this is achieved by testing if the normals of the arcs are collinear. Need to do testing to ensure no side effects.
+- Modified 'find_vertex_with_minimum_curvature' so that it will always give priority to vertices with curvature equal to 0 to be removed.
+- Commented WARNING about division by zero, in 'angleBetweenVectors' in geometry.c
+- Removed function 'getProjectedStarAngle' from gaussMap.c. This was intended to be used for identifying the orientation of the spherical polygons based on the projection of the cone, and using the 2D curvature program. But this seems to be even more complex.
+- [TO_DO: 023] The count of neighbours is incorrect for vertices in the border of an open mesh. To correct this, redo the functions 'getConeVertices' and 'project_cone_on_plane', possibly making the latter be called from the former.
+
+
+06 / 08 / 2006
+- Found another problem. The file 'Data/Q-be/cube-05.obj 9' does not work at the moment. In it 4 spherical triangles meet at the centre, and the polygon splitting fails to identify them. [PROGRAM_ERROR: 017]
+- Debugged the gaussMap/decimation program using valgrind, to ensure better use of memory.
+
+07 / 08 / 2006
+- Idea for decimation. When, after removing a vertex, one of the triangles generated in the new triangulation is very narrow, it should be possible to either remove or swap an edge to get a better result. A good place to make this check is in 'geometry.c' in the function 'triangulateFlatPolygon', line around 729, where some distances are measured.
+
+10 / 08 / 2006
+- Removed unused function 'tagMatchingPairs' from sphericalGeometry.c. This function was used to mark pairs of vectors so that their id's would be displayed correctly in OpenGL. It has been replaced by the mechanism that draws the vectors at different lengths.
+
+11 / 08 / 2006
+- Continuing with memory debugging of decimator.
+- Discovered another problem. When a vertex has loops in the indicatrix, as in monkey and penta saddles, only one of the loops is registered in the final list of normals that will be displayed. This is not noticeable on the display, but produces a leak of memory, since the remaining loops are not inserted into the vertex data structure, and thus not freed later on. Solved by joining the lists of the vectors into the one for display. Still need to test how this displays.
+
+12 / 08 / 2006
+- New problem. If the obj file contains vertices that are not used in any face, these vertices will make the program crash when doing decimation. Must get rid of these vertices since they are initially analysed. [PROGRAM_ERROR: 018]
+
+18 / 08 / 2006
+- Discovered a few problems with the Convex Hull algorithms. The function 'normalizeVector' in geometry.c often reports vectors with zero length when trying to find the C.H. It is recommended to un-comment this warning, and look for a way to clean the C.H. algorithm. [PROGRAM_ERROR: 019]
+
+21 / 08 / 2006
+- Greatly improved the performance of the decimator program.
+- Took gl functions out of the loop for removal of points. Generating the display lists was making the program very slow. It is really fast when only removing batches of vertices.
+- Modified the function 'get_decimated_object' in decimator.c. It now creates a new array that holds the new indices of the vertices that will be written into the new obj file. It no longer does a loop for each of the removed vertices, within the loop of faces. That previous algorithm was extremely slow.
+
+22 / 08 / 2006
+- Discovered new problem with Data/Cones/cone12-1.obj, which is again not working. Now several of the intersections are not identified, returning only two polygons, one very large and negative. Possibly because of changes in 'splitSphericalPolygon'.
+
+29 / 08 / 2006
+- [TO_DO: 024] Change function 'find_vertex_with_minimum_curvature', where the angle_deficit is used to check if a border vertex is eliminated. Have it make a check within a certain tolerance, instead of only 0.0.
+- [TO_DO: 025] Recalculate the vertex normals each time they are modified during decimation. Use an implementation of the algorithm by Shroeder et al., in the function 'get_average_normal' in gaussMap.c
+- DONE TO_DO: 025.
+- Added function to compute the area of a triangle in space, in faces.c. Also the function to compute the area of the vertex star was moved to faces.c.
+
+03 / 09 / 2006
+- Modifying decimator to do edge flipping. Requirements:
+	* Copy of the faces deleted
+	* List of neighbour vertices
+	* Array of new faces
+	* List of edges
+- DONE TO_DO: 024. This also solves a problem in cases like 'Data/flat-2.obj', where all the vertices are on the border. Currently tolerance set to 0.5. Need testing to find an appropriate value.
+
+06 / 10 / 2006
+- Analysed errors when doing decimation. Eventually it stalls when deleting a vertex. This is generally caused by removing a vertex whose projected polygon has self intersections. Possible solution is to do the projection on a sphere.
+
+01 / 11 / 2006
+- Add function to "Reconstructor" program to save the resulting curve.
+
+08 / 11 / 2006
+- [TO_DO: 026] New insight on the computation of areas of spherical polygons. Is it necessary to recompute the area of a negative polygon. If we already have the area of the positive version, negative area should be 2PI - positive area????
+- [TO_DO: 027] Check that new approach to determining orientation of the spherical polygons previous to area is based on the sum of the signed angles. This should work by determining the largest sum of signed angles.
+
+05 / 12 / 2006
+- Changed the functions to compare if two vectors are equal. Before, the angle between vectors was compared to see if they are equal, but it was not as precise as necessary for detailed models. Now the function compares the three coordinates independently. All three must be within a certain tolerance to be considered equal.
+
+06 / 12 / 2006
+- Partially implemented sorted array of decimation parameters. The intention is to make searches for the next element to decimate much faster. Still not working for several cases, mainly "open" objects, and crashes even sooner than before. Possibly due to the array not being properly updated.
+
+12 / 12 / 2006
+- Changed the types of vertices. Added new types ALL_POS_CONCAVE and MIXED_CONCAVE.
+- Added function to determine if mixed or positive vertices are concave, by comparing the vectors of the edges of the cone to the artificial normal.
+- Added new colours for the display of the new types of vertices.
+
+12 / 01 / 2007
+- [TO_DO: 027] Implement an optimisation of the edge swap algorithm. Give preference to triangles of better size ratio in the case of equal curvatures. (Coplanar triangles).
+
+13 / 01 / 2007
+- Added Precompiler variable CURVATURE to decimator.c. This will help to select the curvature measure to be used to drive the decimation, either by gauss map or by angle deficit.
+- Found an error when inserting intersection vectors into the list of vectors around a vertex. When sorting the vectors in "orderIntersectionsList", the initial vector itself is also checked for its correct position. The angles between this vector and itself are tested against other vectors. This leads to a special case when an intersection occurs almost at the same location as the vector. In this case the angles will be both equal to zero, and the intersection vector will be inserted before the actual vector. To correct this, the counters for the loops will begin at 1, so that the start vector is not considered anymore for these tests. However, this may have been a planned procedure. Must make checks that other vertices are not affected by this.
+- Added new function "relaxedEqualVectors", identical to "equalVectors", but with a larger tolerance. This is now used when getting the initial list of vectors for each vertex. In this way, problematic vectors that are very similar are eliminated from the beginning, and simplify the computation of the gauss map later on, at the expense of some small precision. Need to do tests to ensure no side effects, but this should be fairly safe.
+
+24 / 01 / 2007
+- Further increased the tolerance used when comparing two vectors in the function "relaxedEqualVectors" to 1E-2. This allows for more models to be handled by the program. However the difference is visible even in low poly models. Some detail is lost, and thus the Gauss Map display becomes very similar to the Angle Deficit. Models now readable include: horse, shark, santa, venus.
+
+01 / 02 / 2007
+- [TO_DO: 028] Add check to the decimation program: If there are any self intersections in the projected polygon, then the vertex is not removed. This should be done before doing any alterations to the mesh.
+- [TO_DO: 029] Add an alternative plane for the projection. Possibly use an average of the neighbouring vertices around the hole
+- [TO_DO: 030] Also in the decimation program. Implement computation of the cost of removing a vertex (error metric) to improve the results. Also do this with a possible rollback function, so that in case of a large error, the vertex is not removed. This should also serve as a means to select which vertex to remove, as the one that creates a small difference from before--after.
+- [TO_DO: 031] Change the decimation algorithm to do edge collapses instead of vertex decimation??? Could provide better results, and avoids doing re-triangulation. This requires having a list of edges with weights for each.
+
+12 / 02 / 2007
+- Requests from Lyuba:
+- [TO_DO: 032] Prohibit the edge swapping if one of the endpoints of the edge has valency 3. That is, has 3 neighbour vertices, since this would always cause two faces to be coplanar in opposite directions.
+- [TO_DO: 033] Skip over the retriangulation of the projected star of the removed vertex. Simply set any arbitrary triangulation, and let the edge swapping take care of smoothing it. Will this work???
+- For the arbitrary triangulation, start at any vertex, and make edges connecting all visible vertices. When there are no more visible vertices, start again from the last vertex connected. (See NOTE drawing).
+- Found an apparently big problem in the decimation program. The sorted array of the decimation parameters seems not to be updated for the vertices involved in edge flips. Added a modification to the function "update_flip_vertex_data" to solve the problem. At the moment this correction makes the program crash earlier. Need to debug to find out if the restoring of the array information is being done correctly.
+
+13 / 02 / 2007
+- Modified function "minimise_triangulation_curvature" to ensure that when doing a rollback of an edge flip, all the data is restored to the original condition.
+
+15 / 02 / 2007
+- Added functions "validate_initial_triangulation", "test_duplicate_faces" to check if the initial retriangulation of a hole creates duplicate triangles.
+- Added functions "validate_edge_flip", "check_existing_faces" to check if edge flips produce duplicated opposite triangles.
+- Started work on major modification to the program. The retriangulation of holes will no longer be done using the projection on a plane. Rather use a simple arbitrary triangulation starting at the vertex closest to the one removed. (A simple "half-edge collapse"?).
+
+16 / 02 / 2007
+- Added check in function "getFaceNormalList". When three vectors form a coplanar arc, one of them is removed. The new check tests which vector produces the largest angle, and keeps that one. Otherwise some features of the gauss map were lost. Example in "Data/Bugs/problem_vertex_6.obj" vertices 1 or 4.
+- Found a vertex that produces problems in the Gauss Map. Need to investigate more. "Data/Bugs/problem_vertex_6.obj 6".
+- Continued work on edge collapse simplification.
+
+19 / 02 / 2007
+- Corrected the edge flipping algorithm.
+- The recomputation of the curvature of the vertices is done when an edge flip is identified as valid. Otherwise the edge will be flipped back without the need to recompute.
+- Once a flip is valid, the curvature is obtained again for all vertices involved. Then the comparison is made to check if the flip decreases the overall curvature. If it does not, then the edge is flipped back and the curvature recomputed again, to rollback to the original state.
+
+20 / 02 / 2007
+- Spotted an error in "findArcIntersections". After calling the function "double_check_intersection" even if the intersection was not valid, the vector involved would still have the intersection counter increased. The solution is to decrease the vector's intersection count when the double check fails.
+- Increased number of test flips to num_edges^3. If after num_edges attempts no flip was accepted, the loop is terminated.
+
+26 / 03 / 2007
+- New problem with the program. Sample "casting.obj" crashes when using the "relaxedEqualVectors" function with threshold of 1E-2. Reason unknown. [PROGRAM_ERROR: 020]
+
+17 / 04 / 2007
+- Changed glObjectLists.c so that when displaying the Angle Deficit colour it will also make a distinction forvertices of curvature zero, and show them in white. A function was added in this file to assign the colour index according to the Gaussian curvature (AD).
+
+19 / 04 / 2007
+- Improved the makefile. Now it allows to make both "decimator" and "gaussMap" without having to edit the source files.
+- Changed glGaussMap.c to automatically select if the sphere for the Gauss Map is shown. If the object has more than 10 vertices and none of them was initially selected, the sphere is hidden at first.
+- Changed the limit of the decimation. It will stop when the mesh has been decimated to 98%, or until it has only 4 vertices.
+
+21 / 06 / 2007
+- Changes to decimator: Changed functions to determine if an edge flip is accepted or rejected, based on the curvature of the whole star, and its difference to the original star. It causes some problems when the resulting flip has a closer curvature to the original, but produces overlapping of some triangles.
+- Added a 'define' variable 'NEW' to select the method for the selection of the flips. To use the old method, comment the definition in function 'minimise_triangulation_curvature'.

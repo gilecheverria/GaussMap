@@ -1,0 +1,91 @@
+Reconstruction and characterisation of complex geometric models based on curvature measures
+===========================================================================================
+
+
+1. Introduction
+===============
+	Measurements of curvature are employed in several areas to asses information about the shape of objects. Objects in computer graphics are normally represented as polyhedral surfaces. The existing methods for measuring curvature in discrete polygon meshes are not complete. This research looks to obtain an accurate measurement of curvature for all possible kinds of polyhedrals, including those not convex, and also with self intersections.
+
+	Main objective of the research:
+	The curvature of a polygon mesh is obtained from the spherical representation of the curvature for each individual vertex. This spherical representation is the Gauss Map, and is based on the normal vectors of the faces around each vertex. The advantage of this method is that it incorporates the concepts of positive and negative curvature, which allows for clear identification of vertices that would appear the same under other methods. Also because of this distinction, more features of a vertex can be recognised.
+
+	Obtaining appropriate measurements of curvature for all kinds of vertices will help in reconstructing objects from an unidentified point cloud.
+
+	The final objective is to identify practical applications where the use of the curvature information is useful to identify, classify or modify the polyhedral representation of an object. The computations required for the Gauss Map are relatively simple and fast, allowing for the method to be used in a variety of applications, from games to object recognition.
+
+
+2. Literature review
+====================
+
+3. Curvature in 2D
+==================
+	Analysis of curvature in 2 dimensions is carried out to provide insight into the principles of measurement and possible pitfalls.
+	[Description of theory about curvature]
+	Smooth curves versus polygons: curvature of a discrete curve formed as a series of segments is measured as the angles between the segments.
+	Orientation is used to determine whether a turn in the curve is positive or negative. Adding up the orientations for all the angles in a curve will eventually also provide a final orientation for the whole polygon.
+
+4. Curve fitting
+================
+	Objective: To generate a curve that includes all the data in a point cloud, having no other information about the origin of the data. The curve will satisfy some criteria of minimising parameters. Several possible parameters were tested, which provide various results which can be useful, depending on the requirements.
+	
+	Description of different algorithms implemented:
+		- Simple closed curves: The data is ordered and a curve that goes through all points is drawn, ensuring that it has no self intersections, but without any optimisation. This is simple, but will generally produce curves with very high curvature, and very jaded edges.
+		- Curves with one deviation from convex hull: In this case, the point cloud is recursively ordered as a set of indented convex hulls. Each outer convex hull will be connected with the next one inside, until all are integrated to the final curve. [ NEW DEVELOPMENT ]
+			+ Inner curves added by the points which have minimal distance between hulls.
+			+ Inner curves added by minimising the angles between the segments that connect hulls.
+		- Curves with several concavities: Based on the initial convex hull for the data, all other points are added in turn, at each step minimising some criteria: [ NEW DEVELOPMENT ]
+			+ Local angles (1 or 3)
+			+ Total curvature (all angles in the curve)
+			+ Distance from the new point to the closest segment of the curve
+			+ Products and ratios of several distances or angles
+
+	Description of the procedures to detect self intersections: Each of the 3 major algorithms presented before is susceptible to certain kinds of self intersections. Algorithms developed to detect and correct the curve in the best possible way.
+
+	Comparison of results obtained with algorithms developed by other researchers. Some of the other methods were also implemented to test on the same data.
+
+5. Curvature in 3D
+==================
+	Description of gaussian curvature: Two kinds of curvature for an object in 3D. Gaussian and mean curvature.
+
+	Total Absolute Curvature (TAC): Introduction of positive and negative components of the curvature. Adding the absolute values of these two numbers gives the TAC as a result, being a more complete measurement of curvature.
+
+	Improvements gained by using TAC
+
+	Gauss Map explanation: Obtaining the curvature from the areas of the spherical polygons projected from the normal vectors of the object.
+
+	Procedure to compute curvature based on areas
+		- Sorting faces and normal vectors: ordering of the faces around the vertex in a counter-clockwise order. Removing duplicate normal vectors.
+		- Detection of arc intersections: Joining normal vectors in the appropriate order with arcs of the great circles of the sphere. Identify where these arcs intersect. [ NEW DEVELOPMENT ]
+		- Splitting of the spherical polygons: Determining which of the arc intersections are actually the meeting point of two spherical polygons, or if the polygons simply overlap. Determining where the overlapping may lead to positive and negative areas cancelling each other. [ NEW DEVELOPMENT ]
+		- Identification of the orientation of the polygons: Each spherical polygon obtained splits the sphere in two regions, and can be interpreted in two ways, as a positive area, or its negative complement. Several parameters are tested to determine the correct orientation, based on the properties observed for each kind of area. This is complicated by the regions which cancel each other with + and - signs. [ NEW DEVELOPMENT ]
+		- Computing areas
+
+6. Display of Gauss Map using OpenGL
+====================================
+	Generation of display lists: All the information obtained for the curvature is stored in data structures. These are then translated into OpenGL instructions, to display all the vectors, arcs, spherical polygons. [ NEW DEVELOPMENT ]
+
+	Triangulation of spherical polygons: OpenGL does not have a procedure to draw spherical polygons. The method developed requires that each polygon be split into simple triangles. To do this, a flat polygon triangulation was modified to work on a sphere. [ NEW DEVELOPMENT ]
+
+	Rotation matrices for the arcs and culling planes: Once the polygon has been reduced to a list of triangles, each of them is drawn by cutting away slices of a sphere. This is achieved by setting up three planes (called culling planes) at the boundaries of the triangle. These planes will exclude from the rendering everything that lies on one side of them. By placing them correctly, only a triangular part of the sphere will be drawn. [ NEW DEVELOPMENT ]
+
+7. Applications of TAC
+======================
+	Terrain description and navigation (Game-On conference)
+		Using the Gauss Map, a terrain can be segmented into areas of positive, negative and mixed curvature. An algorithm for path finding can use this information as a guide to the topography of the region. This can be used to avoid obstacles, find a smooth trajectory, avoid hills or valleys, minimise energy consumed to go from one point to another.
+
+	Modification of a mesh to eliminate mixed curvatures
+		Once the vertices have been classified as mixed, new vertices can be added, in a manner that will make the old vertex be simply either positive or negative. Using this method, the model would end up having only convex or saddle vertices.
+
+	Decimation based on curvature
+		Remove vertices from a polygon mesh. Taking away vertices with the smallest curvature will make the minor modification to the shape of an object. After removing a vertex, the hole left must be retriangulated, and the curvature measurements for the neighbouring vertices are recalculated.
+
+	Shape recognition (face identification)
+		Give measurements of curvature of specific regions of the face.
+			- 2D curve: Measure the curvature of a curve representing the profile of a face.
+
+	Other projects
+		Blood cell: Progressively improve a model for a red blood cell, to be used for the modelling of the flow of these cells in the arteries. Various stages of refinement of the cell mesh. Based mainly on subdivision of a polyhedral to obtain a sphere, and either manually or procedurally editing the sphere to give the specific shape required.
+		Hexons / Pentons: Modelling of these structures, initially as a surface of revolution, and later as a 3D model using the Blender software.
+
+8. Results and conclusions
+==========================

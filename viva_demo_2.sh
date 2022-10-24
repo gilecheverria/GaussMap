@@ -1,0 +1,16 @@
+objReader Data/Decimation/triceratops.obj
+./gaussMap-single Data/Decimation/triceratops.obj
+objReader Data/Metro/obj/triceratops-2500-gm.obj
+./gaussMap-single Data/Metro/obj/triceratops-2500-gm.obj
+objReader Data/Decimation/venus.obj
+./gaussMap-single Data/Decimation/venus.obj
+objReader Data/Metro/obj/venus-4000-gm.obj
+./gaussMap-single Data/Metro/obj/venus-4000-gm.obj
+objReader Data/Metro/obj/venus-8000-gm.obj
+./gaussMap-single Data/Metro/obj/venus-8000-gm.obj
+objReader Data/Metro/obj/venus-11000-gm.obj
+./gaussMap-single Data/Metro/obj/venus-11000-gm.obj
+objReader Data/Metro/obj/rockerarm_small.obj
+./gaussMap-single Data/Metro/obj/rockerarm_small.obj
+objReader Data/Metro/obj/rockerarm-9500-gm.obj
+./gaussMap-single Data/Metro/obj/rockerarm-9500-gm.obj

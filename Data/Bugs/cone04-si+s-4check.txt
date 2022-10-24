@@ -1,0 +1,6 @@
+Problem: Program is only recognizing one spherical polygon, where there should be two. Possibly because of face normals equal to an intersection vector.
+Correction: Problem in "findArcIntersection". Not recognizing the intersection.
+Update: Normal vectors 3 and 9 are equal to an intersection. So the intersection happens at the meeting of 4 arcs: 8-9, 9-1, 2-3, 3-4.
+A simpler version of the cone is in file Data/Bugs/cone7-problem.obj
+
+Solution: Look at "splitSphericalPolygon" in sphericalGeometry.c
